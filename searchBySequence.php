@@ -95,6 +95,7 @@ tr:nth-child(even) {
 
     <div class="row">
         <div class="col-lg-12">
+
             <?php
             // Connect to server and select database.
             $link = mysqli_connect("localhost", "callsobing", "wannatobetop", "varclust") or
@@ -114,51 +115,18 @@ tr:nth-child(even) {
                 <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
             ");
 
-            $nums = 0;
-            $path_prefix = "/var/www/html/varclust/record/";
-            $genotype_success = "/GENOTYPE_SUCCESS";
-            $genotype_fail = "/GENOTYPE_FAIL";
-            $clustering_success = "/CLUSTERING_SUCCESS";
-            $clustering_fail = "/CLUSTERING_FAIL";
-            while($row = mysqli_fetch_assoc($result))
-            {
-                $raw_jobid = $row['job_id'];
-                if(file_exists($path_prefix.$raw_jobid.$clustering_success)){
-                } elseif (file_exists($path_prefix.$raw_jobid.$clustering_fail)){
-                } elseif (file_exists($path_prefix.$raw_jobid.$genotype_success)){
-                } elseif (file_exists($path_prefix.$raw_jobid.$genotype_fail)){
-                } else{
-                    $nums += 1;
-                }
-            }
-
-            if($nums > 1){
-                die("
-                <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
-                <use xlink:href=\"#stroked-cancel\"></use></svg>You already have two jobs running/in queue, please submit later!!</div><img src=\"img/serverLoad.jpg\">
-                <meta http-equiv=\"refresh\" content=\"8;url=submit.html\">
-            ");
-            }
-
-
-            $chromosome = $_POST["chromosome"];
-            $start = $_POST["start"];
-            $end = $_POST["end"];
             $email = $_POST["email"];
-            $notes = $_POST["notes"];
-            $clustering_m = $_POST["clustering_method"];
-            $job_id = "varclust_" . md5(uniqid(rand()));
+            $sequence = $_POST["sequence"];
+            $job_id = "putella_" . md5(uniqid(rand()));
+            $path_prefix = "/var/www/html/putella/record/";
 
-            $sql = "INSERT INTO jobs (job_id, status, chromosome, start, end, user_token, submit_date, update_date, note, clustering_m) VALUES ( '$job_id' , 'submitted', '$chromosome', '$start', '$end', '$email', now(), now(), '$notes', '$clustering_m')";
-            mysqli_query($link, $sql) or die ("
-                        <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
-                        <use xlink:href=\"#stroked-cancel\"></use></svg>Oooops, Something went wrong. Seems like we are facing some technical issues during creating new records into database....</div><img src=\"img/sorry.jpg\">
-                        <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
-					");
+            exec("mkdir -m 777 $path_prefix$job_id");
+            exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
+            exec("blastn -db putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output");
 
-            exec("mkdir -m 777 /var/www/html/varclust/record/$job_id");
-            exec("python3 testSpark.py $chromosome $start $end $job_id $clustering_m > /dev/null 2>&1 &", $output, $status);
             ?>
+
+
             <div class="alert bg-success" role="alert">
                 <svg class="glyph stroked checkmark">
                     <use xlink:href="#stroked-checkmark"></use>
