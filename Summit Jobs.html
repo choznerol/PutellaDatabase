@@ -140,13 +140,30 @@
             if(searchType.value==1) 
                 URLs="receiveText.php";
             else 
-                URLs="receiveSequence.php";
+                URLs="searchBySequence.php";
             
-            $.post(URLs, {query: query.value} )
-                .done(function(data) {
-                    swal("Job received", " ", "success");
-                });
-        }
+            $('<form action="'+URLs+'" method="POST"><input type="hidden" name="sequence" value="'+query.value+'"></form>').appendTo('body').submit();
+            
+//            $.post(URLs, {query: query.value} )
+//                .done(function(data) {
+//                    swal("Job received", " ", "success");
+//                });
+            
+//            $.redirectPost(URLs, {query: query.value});
+//
+//            // jquery extend function
+//            $.extend({
+//                redirectPost: function(location, args) {
+//                    var form = '';
+//                    $.each( args, function( key, value ) {
+//                        form += '<input type="hidden" query="'+value'">';
+//                    });
+//                    $('<form action="'+location+'" method="POST">'+form+'</form>').appendTo('body').submit();
+//                }
+//            });
+//            
+            
+            }
         
         
         
