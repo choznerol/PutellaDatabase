@@ -7,8 +7,9 @@
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
-
+    
 <!--Icons-->
 <script src="js/lumino.glyphs.js"></script>
 
@@ -46,8 +47,8 @@
             <li><a href="index.html"><svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg> Introduction </a></li>
             
             <li><a href="SubmitJob.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Submit Jobs</a></li>
-            <li><a href="JobStatus.html"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Jobs Status</a></li>
-            <li class="active"><a href="Results.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Results</a></li>
+            <li class="active"><a href="JobStatus.html"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Jobs Status</a></li>
+            <li><a href="Results.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Results</a></li>
 
 		</ul>
 
@@ -66,25 +67,50 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Get your Job result</div>
+					<div class="panel-heading">Get your Job status</div>
 					<div class="panel-body">
 						<div class="col-md-6">
 							<form role="form">
 							
 								<div class="form-group">
-									<label>Your Job_id:</label>
-									<input class="form-control" placeholder="type-in your job id here...">
+									<label>Your E-mail address:</label>
+									<input class="form-control" placeholder="type-in your email address here....">
 								</div>
-	
+
+								
 								<button type="submit" class="btn btn-primary">Submit</button>
 								<button type="reset" class="btn btn-default">Reset</button>
-							</div>
-						</form>
+							
+						    </form>
+                         </div>
 					</div>
 				</div>
 			</div><!-- /.col-->
 		</div><!-- /.row -->
-		
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Job Status</div>
+                    <div class="panel-body">
+                        <table data-toggle="table" data-url="./status"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                            <thead>
+                            <tr>
+                                <th data-field="job_id" data-sortable="true">Job ID</th>
+                                <th data-field="start" data-sortable="true">Chromosome</th>
+                                <th data-field="end"  data-sortable="true">Start</th>
+                                <th data-field="chromosome" data-sortable="true">End</th>
+                                <th data-field="user_token" data-sortable="true" >E-mail</th>
+                                <th data-field="status" data-sortable="true" >Status</th>
+                                <th data-field="submit_date" data-sortable="true">Submit Date</th>
+                                <th data-field="update_date"  data-sortable="true">Update Date</th>
+                                <th data-field="note" data-sortable="no">note</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.row-->
 	</div><!--/.main-->
 
 	<script src="js/jquery-1.11.1.min.js"></script>
@@ -94,6 +120,7 @@
 	<script src="js/easypiechart.js"></script>
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-table.js"></script>
 	<script>
 		!function ($) {
 			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
