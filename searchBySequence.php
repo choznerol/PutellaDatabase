@@ -118,14 +118,14 @@ tr:nth-child(even) {
 //            $email = $_POST["email"];
             $sequence = $_POST["sequence"];
             $job_id = "putella_seq_" . md5(uniqid(rand()));
-            $path_prefix = "/var/www/html/putella/record/";
+            $path_prefix = "~/../lc1024/var/www/html/putella/record/";
 
             exec("mkdir -m 777 $path_prefix$job_id");
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
-            exec("blastn -db putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output");
+            exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output");
 
             $arg = $sequence."!?";
-            echo "Input: $arg";
+            echo "input sequence was: $arg";
 
             ?>
 

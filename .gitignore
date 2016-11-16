@@ -1,4 +1,4 @@
 *.fasta
 *.output
-.idea
+.idea/*
 test_*
