@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>test form post...</h1>
+
+    <script>
+        URLs="searchBySequence.php";
+        $('<form action="'+URLs+'" method="POST"><input type="hidden" name="sequence" value="AAAAA"></form>').appendTo('body').submit();
+        $('<h1>test form post...</h1>').appendTo('body').submit();
+    </script>
+
+</body>
+</html>

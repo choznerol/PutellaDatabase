@@ -97,32 +97,35 @@ tr:nth-child(even) {
         <div class="col-lg-12">
 
             <?php
-            // Connect to server and select database.
-            $link = mysqli_connect("localhost", "callsobing", "wannatobetop", "varclust") or
-            die("
-                <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
-                <use xlink:href=\"#stroked-cancel\"></use></svg>Oooops, Something went wrong. Seems like we are facing some technical issues during connecting to database....</div><img src=\"img/sorry.jpg\">
-                <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
-            ");
-
-            // Check if user already has more than 2 jobs in queue.
-            $token = $_POST["email"];
-            $sql = "SELECT * FROM `jobs` WHERE `user_token`='$token'";
-            $result = mysqli_query($link, $sql) or
-            die ("
-                <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
-                <use xlink:href=\"#stroked-cancel\"></use></svg>Oooops, Something went wrong. Seems like we are facing some technical issues during selecting new records in the database....</div><img src=\"img/sorry.jpg\">
-                <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
-            ");
-
-            $email = $_POST["email"];
+//            // Connect to server and select database.
+//            $link = mysqli_connect("localhost", "callsobing", "wannatobetop", "varclust") or
+//            die("
+//                <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
+//                <use xlink:href=\"#stroked-cancel\"></use></svg>Oops, Something went wrong. Seems like we are facing some technical issues during connecting to database....</div><img src=\"img/sorry.jpg\">
+//                <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
+//            ");
+//
+//            // Check if user already has more than 2 jobs in queue.
+//            $token = $_POST["email"];
+//            $sql = "SELECT * FROM `jobs` WHERE `user_token`='$token'";
+//            $result = mysqli_query($link, $sql) or
+//            die ("
+//                <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
+//                <use xlink:href=\"#stroked-cancel\"></use></svg>Oooops, Something went wrong. Seems like we are facing some technical issues during selecting new records in the database....</div><img src=\"img/sorry.jpg\">
+//                <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
+//            ");
+//
+//            $email = $_POST["email"];
             $sequence = $_POST["sequence"];
-            $job_id = "putella_" . md5(uniqid(rand()));
+            $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "/var/www/html/putella/record/";
 
             exec("mkdir -m 777 $path_prefix$job_id");
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
             exec("blastn -db putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output");
+
+            $arg = $sequence."!?";
+            echo "Input: $arg";
 
             ?>
 
