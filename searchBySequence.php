@@ -118,7 +118,7 @@ tr:nth-child(even) {
 //            $email = $_POST["email"];
             $sequence = $_POST["sequence"];
             $job_id = "putella_seq_" . md5(uniqid(rand()));
-            $path_prefix = "~/../lc1024/var/www/html/putella/record/";
+            $path_prefix = "~/../lc1024/public_html/var/www/html/putella/record/";
 
             exec("mkdir -m 777 $path_prefix$job_id");
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
