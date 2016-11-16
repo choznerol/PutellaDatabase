@@ -48,8 +48,8 @@
 		<ul class="nav menu">
             <li><a href="index.html"><svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg> Introduction </a></li>
             
-            <li class="active"><a href="Summit Jobs.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Submit Jobs</a></li>
-            <li><a href="Jobs Status.html"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Jobs Status</a></li>
+            <li class="active"><a href="SubmitJob.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Submit Jobs</a></li>
+            <li><a href="JobStatus.html"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Jobs Status</a></li>
             <li><a href="Results.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Results</a></li>
 
 		</ul>
@@ -140,13 +140,30 @@
             if(searchType.value==1) 
                 URLs="receiveText.php";
             else 
-                URLs="receiveSequence.php";
+                URLs="searchBySequence.php";
             
-            $.post(URLs, {query: query.value} )
-                .done(function(data) {
-                    swal("Job received", " ", "success");
-                });
-        }
+            $('<form action="'+URLs+'" method="POST"><input type="hidden" name="sequence" value="'+query.value+'"></form>').appendTo('body').submit();
+            
+//            $.post(URLs, {query: query.value} )
+//                .done(function(data) {
+//                    swal("Job received", " ", "success");
+//                });
+            
+//            $.redirectPost(URLs, {query: query.value});
+//
+//            // jquery extend function
+//            $.extend({
+//                redirectPost: function(location, args) {
+//                    var form = '';
+//                    $.each( args, function( key, value ) {
+//                        form += '<input type="hidden" query="'+value'">';
+//                    });
+//                    $('<form action="'+location+'" method="POST">'+form+'</form>').appendTo('body').submit();
+//                }
+//            });
+//            
+            
+            }
         
         
         
