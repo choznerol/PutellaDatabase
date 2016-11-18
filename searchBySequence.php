@@ -101,7 +101,7 @@ tr:nth-child(even) {
 //            $email = $_POST["email"];
             $sequence = $_POST["sequence"];
             $job_id = "putella_seq_" . md5(uniqid(rand()));
-            $path_prefix = "~lc1024/var/www/html/putella/record/";
+            $path_prefix = "seq";
 
 //            shell_exec("pwd 2>&1', $output");
 //            print_r($output);
@@ -136,8 +136,12 @@ tr:nth-child(even) {
 //            echo "\noutput:";
 //            print_r($output);
 
-            exec('mkdir -m 777 $path_prefix$job_id');
-            exec('echo \"$sequence\" > $path_prefix$job_id.fasta');
+            exec('mkdir -m 777 $path_prefix');
+            exec('echo \"$sequence\" > $job_id.fasta', $output, $return_var);
+                        echo "\nreturn_var:";
+                        print_r($return_var);
+                        echo "\noutput:";
+                        print_r($output);
             exec('blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output');
             exec('cat $path_prefix$job_id.output', $blastn_output);
 
