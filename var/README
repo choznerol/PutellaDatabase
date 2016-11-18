@@ -1,0 +1,2 @@
+directory var/ must be accesible by http
+try "chmod 777 var" to open premission
