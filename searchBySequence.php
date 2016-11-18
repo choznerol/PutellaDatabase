@@ -145,7 +145,7 @@ tr:nth-child(even) {
 //            print_r($output);
 
             exec("echo \"$sequence\" > var/$job_id.fasta", $output, $return_var);
-            exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >var/$job_id.output");
+            exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query var/$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >var/$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output, $blastn_output);
 
             ?>
