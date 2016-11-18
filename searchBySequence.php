@@ -122,10 +122,10 @@ tr:nth-child(even) {
             <div class="col-lg-12">
                 <label>Job Submission Summary</label>
                 <table>
-                  <tr>
-                    <td>E-mail</td>
-                    <td><?php echo $email ?></td>
-                  </tr>
+<!--                  <tr>-->
+<!--                    <td>E-mail</td>-->
+<!--                    <td>--><?php //echo $email ?><!--</td>-->
+<!--                  </tr>-->
                   <tr>
                     <td>Job ID</td>
                     <td><?php echo $job_id ?></td>
