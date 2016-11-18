@@ -124,12 +124,19 @@ tr:nth-child(even) {
 //            echo "\nlast_line:";
 //            print_r($last_line);
 //
-//            echo "\n\nexec";
-//            exec('ls', $output, $return_var);
-//            echo "\nreturn_var:";
-//            print_r($return_var);
-//            echo "\noutput:";
-//            print_r($output);
+            echo "<br><br><br>11111111111111";
+            exec('ls', $output, $return_var);
+            echo "\nreturn_var:";
+            print_r($return_var);
+            echo "\noutput:";
+            print_r($output);
+
+            echo "<br><br><br>22222222222222";
+            exec('echo $sequence > hey.fasta', $output, $return_var);
+            echo "\nreturn_var:";
+            print_r($return_var);
+            echo "\noutput:";
+            print_r($output);
 //
 //            echo "\n\nshell_exec";
 //            $output = shell_exec('ls');
