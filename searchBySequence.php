@@ -112,7 +112,7 @@ tr:nth-child(even) {
 //            system("ls");
 //
 //            echo "\nblastn_output:";
-//            print_r($blastn_output);
+            print_r($output_file);
             ?>
 
             <div class="alert bg-success" role="alert">
