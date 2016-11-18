@@ -107,6 +107,8 @@ tr:nth-child(even) {
             exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >var/$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output, $blastn_output);
 
+            exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output, $blastn_output);
+
             ?>
 
 
