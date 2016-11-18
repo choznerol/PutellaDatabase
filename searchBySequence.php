@@ -117,9 +117,9 @@ tr:nth-child(even) {
 //            2> var/example_$job_id.err");
 
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output);
-            system("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
+//            system("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
 
-//            exec("cat $path_prefix$job_id.output", $output_file);
+            exec("cat $path_prefix$job_id.output", $output_file);
 //
 //            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $example_output);
 //            system("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
@@ -164,7 +164,7 @@ tr:nth-child(even) {
                   </tr>
                   <tr>
                     <td>Blastn output</td>
-                    <td><?php echo $output_file ?></td>
+                    <td><?php echo $blastn_output ?></td>
                   </tr>
                 </table>
             </div>
