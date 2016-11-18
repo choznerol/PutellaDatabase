@@ -121,15 +121,15 @@ tr:nth-child(even) {
             $path_prefix = "~/../lc1024/public_html/var/www/html/putella/record/";
 
 
-            echo "input sequence was: $sequence/n";
+            echo "input sequence was: $sequence\n";
 
             exec("pwd 2>&1', $output");
             print_r($output);
-            echo "pwd: $output/n";
+            echo "pwd: $output\n";
 
             exec("ls 2>&1', $output");
             print_r($output);
-            echo "ls: $output/n";
+            echo "ls: $output\n";
 
             exec("mkdir -m 777 $path_prefix$job_id");
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
@@ -156,7 +156,7 @@ tr:nth-child(even) {
                 Your job has been submitted! <a href="#" class="pull-right"><span
                         class="glyphicon glyphicon-remove"></span></a>
             </div>
-            <meta http-equiv="refresh" content="5;url=job_status.php">
+<!--            <meta http-equiv="refresh" content="5;url=job_status.php">-->
             <div class="col-lg-12">
                 <label>Job Submission Summary</label>
                 <table>
