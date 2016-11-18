@@ -132,7 +132,7 @@ tr:nth-child(even) {
             print_r($output);
 
             echo "<br><br><br>22222222222222";
-            exec('echo $sequence > hey.fasta', $output, $return_var);
+            exec('echo $sequence > var/hey.fasta', $output, $return_var);
             echo "\nreturn_var:";
             print_r($return_var);
             echo "\noutput:";
