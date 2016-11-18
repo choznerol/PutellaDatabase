@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f90ab659-238d-45b3-9c32-8c7749d1599e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searchBySequence.php" afterPath="$PROJECT_DIR$/searchBySequence.php" />
     </list>
     <ignored path="PutellaDatabase.iws" />
@@ -26,10 +27,12 @@
       <file leaf-file-name="searchBySequence.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/searchBySequence.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="166" column="49" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="49" />
+            <state relative-caret-position="199">
+              <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
-                <marker date="1479481499000" expanded="true" signature="6513:6540" ph="{...}" />
+                <element signature="e#3182#3351#0#PHP" expanded="false" />
+                <element signature="e#4120#4122#0#PHP" expanded="false" />
+                <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -224,7 +227,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25995000" />
+    <option name="totallyTimeSpent" value="26934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
@@ -266,50 +269,15 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1479481499000" expanded="true" signature="6513:6540" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SubmitJob.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="128" column="54" selection-start-line="128" selection-start-column="54" selection-end-line="128" selection-end-column="54" />
-          <folding>
-            <element signature="e#5035#5084#0" expanded="false" />
-            <element signature="e#5221#5278#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_form-post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="136" selection-start-line="11" selection-start-column="109" selection-end-line="11" selection-end-column="136" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Summit Jobs.html" />
     <entry file="file://$PROJECT_DIR$/searchBySequence.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481499000" expanded="true" signature="6513:6540" ph="{...}" />
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -327,7 +295,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481499000" expanded="true" signature="6513:6540" ph="{...}" />
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -345,7 +315,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481499000" expanded="true" signature="6513:6540" ph="{...}" />
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -363,25 +335,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481499000" expanded="true" signature="6513:6540" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Summit Jobs.html" />
-    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1479481499000" expanded="true" signature="6513:6540" ph="{...}" />
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -399,7 +355,9 @@
         <state relative-caret-position="1905">
           <caret line="127" column="82" selection-start-line="127" selection-start-column="82" selection-end-line="127" selection-end-column="82" />
           <folding>
-            <marker date="1479481499000" expanded="true" signature="6513:6540" ph="{...}" />
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -455,10 +413,225 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/searchBySequence.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="166" column="49" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="49" />
+        <state relative-caret-position="212">
+          <caret line="118" column="100" selection-start-line="118" selection-start-column="100" selection-end-line="118" selection-end-column="100" />
           <folding>
-            <marker date="1479481499000" expanded="true" signature="6513:6540" ph="{...}" />
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SubmitJob.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="128" column="54" selection-start-line="128" selection-start-column="54" selection-end-line="128" selection-end-column="54" />
+          <folding>
+            <element signature="e#5035#5084#0" expanded="false" />
+            <element signature="e#5221#5278#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_form-post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="136" selection-start-line="11" selection-start-column="109" selection-end-line="11" selection-end-column="136" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Summit Jobs.html" />
+    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Summit Jobs.html" />
+    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Summit Jobs.html" />
+    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Summit Jobs.html" />
+    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Summit Jobs.html" />
+    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Summit Jobs.html" />
+    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1905">
+          <caret line="127" column="82" selection-start-line="127" selection-start-column="82" selection-end-line="127" selection-end-column="82" />
+          <folding>
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Summit Jobs.html" />
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.fasta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SubmitJob.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="128" column="54" selection-start-line="128" selection-start-column="54" selection-end-line="128" selection-end-column="54" />
+          <folding>
+            <element signature="e#5035#5084#0" expanded="false" />
+            <element signature="e#5221#5278#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_form-post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="136" selection-start-line="11" selection-start-column="109" selection-end-line="11" selection-end-column="136" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchBySequence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <element signature="e#3182#3351#0#PHP" expanded="false" />
+            <element signature="e#4120#4122#0#PHP" expanded="false" />
+            <marker date="1479483726000" expanded="true" signature="6540:6567" ph="{...}" />
           </folding>
         </state>
       </provider>
