@@ -122,6 +122,7 @@ tr:nth-child(even) {
 
             exec("pwd 2>&1', $output");
             print_r($output);
+            echo "pwd: $output";
             exec("mkdir -m 777 $path_prefix$job_id");
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
             exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output");
