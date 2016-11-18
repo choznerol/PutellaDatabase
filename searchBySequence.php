@@ -108,6 +108,11 @@ tr:nth-child(even) {
             exec("cat $path_prefix$job_id.output", $blastn_output, $blastn_output);
 
             exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output, $blastn_output);
+            echo "\nreturn_var:";
+            print_r($return_var);
+            echo "\noutput:";
+            print_r($output);
+
 
             ?>
 
@@ -137,7 +142,7 @@ tr:nth-child(even) {
                   </tr>
                   <tr>
                     <td>Blastn output</td>
-                    <td><?php echo $blastn_output[0] ?></td>
+                    <td><?php echo $blastn_output ?></td>
                   </tr>
                 </table>
             </div>
