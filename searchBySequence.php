@@ -115,7 +115,7 @@ tr:nth-child(even) {
                 <svg class="glyph stroked checkmark">
                     <use xlink:href="#stroked-checkmark"></use>
                 </svg>
-                Your job has been submitted! <a href="#" class="pull-right"><span
+                Done Blast. Query and report saved to http://140.112.94.72/~lc1024/PutellaDatabase/var/ <a href="#" class="pull-right"><span
                         class="glyphicon glyphicon-remove"></span></a>
             </div>
 <!--            <meta http-equiv="refresh" content="5;url=job_status.php">-->
