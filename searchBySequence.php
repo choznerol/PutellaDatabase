@@ -103,51 +103,43 @@ tr:nth-child(even) {
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "~lc1024/var/www/html/putella/record/";
 
-            shell_exec("pwd 2>&1', $output");
-            print_r($output);
-            echo "pwd: $output<br>";
+//            shell_exec("pwd 2>&1', $output");
+//            print_r($output);
+//            echo "pwd: $output<br>";
+//
+//            exec('ls', $output, $return_var);
+//            echo "\nreturn_var:";
+//            print_r($return_var);
+//            echo "\noutput:";
+//            print_r($output);
+//
+//            system("ls 2>&1', $output");
+//            print_r($output);
+//            echo "ls: $output<br>";
 
-            exec("ls 2>&1', $output");
-            print_r($output);
-            echo "ls: $output<br>";
+//            echo "\nsystem";
+//            $last_line = system('ls', $return_var);
+//            echo "\nreturn_var:";
+//            print_r($return_var);
+//            echo "\nlast_line:";
+//            print_r($last_line);
+//
+//            echo "\n\nexec";
+//            exec('ls', $output, $return_var);
+//            echo "\nreturn_var:";
+//            print_r($return_var);
+//            echo "\noutput:";
+//            print_r($output);
+//
+//            echo "\n\nshell_exec";
+//            $output = shell_exec('ls');
+//            echo "\noutput:";
+//            print_r($output);
 
-            system("ls 2>&1', $output");
-            print_r($output);
-            echo "ls: $output<br>";
-
-            echo "\nsystem";
-            $last_line = system('ls', $return_var);
-            echo "\nreturn_var:";
-            print_r($return_var);
-            echo "\nlast_line:";
-            print_r($last_line);
-
-            echo "\n\nexec";
-            exec('ls', $output, $return_var);
-            echo "\nreturn_var:";
-            print_r($return_var);
-            echo "\noutput:";
-            print_r($output);
-
-            echo "\n\nshell_exec";
-            $output = shell_exec('ls');
-            echo "\noutput:";
-            print_r($output);
-
-            exec("mkdir -m 777 $path_prefix$job_id");
-            exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
-            exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output");
-            exec("cat $path_prefix$job_id.output", $blastn_output);
-
-
-
-            function debug_to_console( $data ) {
-                if ( is_array( $data ) )
-                    $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
-                else
-                    $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
-                echo $output;
-            }
+            exec('mkdir -m 777 $path_prefix$job_id');
+            exec('echo \"$sequence\" > $path_prefix$job_id.fasta');
+            exec('blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output');
+            exec('cat $path_prefix$job_id.output', $blastn_output);
 
             ?>
 
