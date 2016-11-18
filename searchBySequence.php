@@ -103,49 +103,8 @@ tr:nth-child(even) {
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "seq";
 
-//            shell_exec("pwd 2>&1', $output");
-//            print_r($output);
-//            echo "pwd: $output<br>";
-//
-//            exec('ls', $output, $return_var);
-//            echo "\nreturn_var:";
-//            print_r($return_var);
-//            echo "\noutput:";
-//            print_r($output);
-//
-//            system("ls 2>&1', $output");
-//            print_r($output);
-//            echo "ls: $output<br>";
-
-//            echo "\nsystem";
-//            $last_line = system('ls', $return_var);
-//            echo "\nreturn_var:";
-//            print_r($return_var);
-//            echo "\nlast_line:";
-//            print_r($last_line);
-//
-            echo "<br><br><br>11111111111111";
-            exec('ls', $output, $return_var);
-            echo "\nreturn_var:";
-            print_r($return_var);
-            echo "\noutput:";
-            print_r($output);
-
-            echo "<br><br><br>22222222222222";
-            exec("echo \"$sequence\" > var/two.fasta", $output, $return_var);
-            exec("echo '$sequence' > var/four.fasta", $output, $return_var);
-            echo "\nreturn_var:";
-            print_r($return_var);
-            echo "\noutput:";
-            print_r($output);
-//
-//            echo "\n\nshell_exec";
-//            $output = shell_exec('ls');
-//            echo "\noutput:";
-//            print_r($output);
-
             exec("echo \"$sequence\" > var/$job_id.fasta", $output, $return_var);
-            exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query var/$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >var/$job_id.output");
+            exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >var/$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output, $blastn_output);
 
             ?>
