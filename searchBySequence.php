@@ -132,9 +132,7 @@ tr:nth-child(even) {
             print_r($output);
 
             echo "<br><br><br>22222222222222";
-            exec('echo $sequence > var/one.fasta', $output, $return_var);
             exec("echo \"$sequence\" > var/two.fasta", $output, $return_var);
-            exec('echo \"$sequence\" > var/three.fasta', $output, $return_var);
             exec("echo '$sequence' > var/four.fasta", $output, $return_var);
             echo "\nreturn_var:";
             print_r($return_var);
@@ -146,14 +144,9 @@ tr:nth-child(even) {
 //            echo "\noutput:";
 //            print_r($output);
 
-            exec('mkdir -m 777 $path_prefix');
-            exec('echo \"$sequence\" > $job_id.fasta', $output, $return_var);
-                        echo "\nreturn_var:";
-                        print_r($return_var);
-                        echo "\noutput:";
-                        print_r($output);
-            exec('blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output');
-            exec('cat $path_prefix$job_id.output', $blastn_output);
+            exec("echo \"$sequence\" > var/$job_id.fasta", $output, $return_var);
+            exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >var/$job_id.output");
+            exec("cat $path_prefix$job_id.output", $blastn_output, $blastn_output);
 
             ?>
 
