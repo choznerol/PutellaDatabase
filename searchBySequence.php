@@ -103,13 +103,13 @@ tr:nth-child(even) {
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "~lc1024/var/www/html/putella/record/";
 
-            exec("pwd 2>&1', $output");
+            shell_exec("pwd 2>&1', $output");
             print_r($output);
-            echo "pwd: $output\n";
+            echo "pwd: $output<br>";
 
             exec("ls 2>&1', $output");
             print_r($output);
-            echo "ls: $output\n";
+            echo "ls: $output<br>";
 
             exec("mkdir -m 777 $path_prefix$job_id");
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
