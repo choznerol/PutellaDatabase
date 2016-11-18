@@ -137,7 +137,7 @@ tr:nth-child(even) {
                   </tr>
                   <tr>
                     <td>Blastn output</td>
-                    <td><?php echo $blastn_output ?></td>
+                    <td><?php echo $blastn_output[0] ?></td>
                   </tr>
                 </table>
             </div>
