@@ -2,4 +2,3 @@
 *.output
 .idea/*
 test_*
-/var
