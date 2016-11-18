@@ -26,10 +26,10 @@
       <file leaf-file-name="searchBySequence.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/searchBySequence.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="119" column="64" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
+            <state relative-caret-position="92">
+              <caret line="110" column="104" selection-start-line="110" selection-start-column="104" selection-end-line="110" selection-end-column="104" />
               <folding>
-                <marker date="1479481149000" expanded="true" signature="6479:6506" ph="{...}" />
+                <marker date="1479481322000" expanded="true" signature="6479:6506" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -219,12 +219,12 @@
       <workItem from="1478786944552" duration="2090000" />
       <workItem from="1479116089492" duration="174000" />
       <workItem from="1479312048422" duration="6165000" />
-      <workItem from="1479442745929" duration="11924000" />
+      <workItem from="1479442745929" duration="12043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25787000" />
+    <option name="totallyTimeSpent" value="25906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
@@ -271,7 +271,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481149000" expanded="true" signature="6479:6506" ph="{...}" />
+            <marker date="1479481322000" expanded="true" signature="6479:6506" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -309,7 +309,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481149000" expanded="true" signature="6479:6506" ph="{...}" />
+            <marker date="1479481322000" expanded="true" signature="6479:6506" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -327,7 +327,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481149000" expanded="true" signature="6479:6506" ph="{...}" />
+            <marker date="1479481322000" expanded="true" signature="6479:6506" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -345,7 +345,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481149000" expanded="true" signature="6479:6506" ph="{...}" />
+            <marker date="1479481322000" expanded="true" signature="6479:6506" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -363,7 +363,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481149000" expanded="true" signature="6479:6506" ph="{...}" />
+            <marker date="1479481322000" expanded="true" signature="6479:6506" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -381,7 +381,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479481149000" expanded="true" signature="6479:6506" ph="{...}" />
+            <marker date="1479481322000" expanded="true" signature="6479:6506" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -399,7 +399,7 @@
         <state relative-caret-position="1905">
           <caret line="127" column="82" selection-start-line="127" selection-start-column="82" selection-end-line="127" selection-end-column="82" />
           <folding>
-            <marker date="1479481149000" expanded="true" signature="6479:6506" ph="{...}" />
+            <marker date="1479481322000" expanded="true" signature="6479:6506" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -455,10 +455,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/searchBySequence.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="119" column="64" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
+        <state relative-caret-position="92">
+          <caret line="110" column="104" selection-start-line="110" selection-start-column="104" selection-end-line="110" selection-end-column="104" />
           <folding>
-            <marker date="1479481149000" expanded="true" signature="6479:6506" ph="{...}" />
+            <marker date="1479481322000" expanded="true" signature="6479:6506" ph="{...}" />
           </folding>
         </state>
       </provider>

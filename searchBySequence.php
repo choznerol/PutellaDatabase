@@ -108,30 +108,30 @@ tr:nth-child(even) {
 
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
 
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100
-            > $path_prefix$job_id.output 
-            2> $path_prefix$job_id.err");
-
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100
-            > var/example_$job_id.output 
-            2> var/example_$job_id.err");
+//            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100
+//            > $path_prefix$job_id.output
+//            2> $path_prefix$job_id.err");
+//
+//            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100
+//            > var/example_$job_id.output
+//            2> var/example_$job_id.err");
 
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output);
             system("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
 
-            exec("cat $path_prefix$job_id.output", $output_file);
-
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $example_output);
+//            exec("cat $path_prefix$job_id.output", $output_file);
+//
+//            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $example_output);
 //            system("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
 //            system("ls");
 //
-            echo "<br>output_file:<br>";
-            print_r($output_file);
-            print_r($output_file[0]);
-
-            echo "<br>example_output:<br>";
-            print_r($example_output);
-            print_r($example_output[0]);
+//            echo "<br>output_file:<br>";
+//            print_r($output_file);
+//            print_r($output_file[0]);
+//
+//            echo "<br>example_output:<br>";
+//            print_r($example_output);
+//            print_r($example_output[0]);
 
             echo "<br>blastn_output:<br>";
             print_r($blastn_output);
