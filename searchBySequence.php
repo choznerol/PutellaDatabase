@@ -112,7 +112,7 @@ tr:nth-child(even) {
             > $path_prefix$job_id.output 
             2> $path_prefix$job_id.err");
 
-            exec("blastn -db /home/callsobing/putella/putella_cufflinksa -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 -query example.fasta
+            exec("blastn -db /home/callsobing/putella/putella_cufflinks -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 -query example.fasta
             > var/example_$job_id.output 
             2> var/example_$job_id.err");
 
