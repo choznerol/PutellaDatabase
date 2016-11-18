@@ -116,6 +116,9 @@ tr:nth-child(even) {
             > var/example_$job_id.output 
             2> var/example_$job_id.err");
 
+            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output);
+            system("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
+
             exec("cat $path_prefix$job_id.output", $output_file);
 
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $example_output);
@@ -129,6 +132,10 @@ tr:nth-child(even) {
             echo "<br>example_output:<br>";
             print_r($example_output);
             print_r($example_output[0]);
+
+            echo "<br>blastn_output:<br>";
+            print_r($blastn_output);
+            print_r($blastn_output[0]);
 
             ?>
 
