@@ -103,20 +103,17 @@ tr:nth-child(even) {
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "seq";
 
-            exec("echo \"$sequence\" > var/$job_id.fasta", $output, $return_var);
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > var/$job_id.output 2> var/$job_id.err");
-            exec("cat var$job_id.output", $output_file);
+            exec("echo \"$sequence\" > var/$job_id.fasta");
+            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > var/$job_id.output 2> var/$job_id.err");
+            exec("cat var/$job_id.output", $output_file);
 
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output);
-            system("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
-            system("ls");
-
-            echo "\nblastn_output:";
-            print_r($blastn_output);
-
-
+//            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output);
+//            system("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
+//            system("ls");
+//
+//            echo "\nblastn_output:";
+//            print_r($blastn_output);
             ?>
-
 
             <div class="alert bg-success" role="alert">
                 <svg class="glyph stroked checkmark">
@@ -143,7 +140,7 @@ tr:nth-child(even) {
                   </tr>
                   <tr>
                     <td>Blastn output</td>
-                    <td><?php echo $output_file[0] ?></td>
+                    <td><?php echo $output_file ?></td>
                   </tr>
                 </table>
             </div>
