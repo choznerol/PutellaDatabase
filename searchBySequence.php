@@ -120,20 +120,21 @@ tr:nth-child(even) {
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "~/../lc1024/public_html/var/www/html/putella/record/";
 
+
+            echo "input sequence was: $sequence/n";
+
             exec("pwd 2>&1', $output");
             print_r($output);
-            echo "pwd: $output\n";
+            echo "pwd: $output/n";
 
             exec("ls 2>&1', $output");
             print_r($output);
-            echo "ls: $output\n";
+            echo "ls: $output/n";
 
             exec("mkdir -m 777 $path_prefix$job_id");
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
             exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output");
-
-            $arg = $sequence."!?";
-            echo "input sequence was: $arg";
+            exec("cat $path_prefix$job_id.output", $blastn_output);
 
 
 
@@ -168,24 +169,8 @@ tr:nth-child(even) {
                     <td><?php echo $job_id ?></td>
                   </tr>
                   <tr>
-                    <td>Chromosome</td>
-                    <td>chr<?php echo $chromosome ?></td>
-                  </tr>
-                  <tr>
-                    <td>Start</td>
-                    <td><?php echo $start ?></td>
-                  </tr>
-                  <tr>
-                    <td>End</td>
-                    <td><?php echo $end ?></td>
-                  </tr>
-                  <tr>
-                    <td>Clustering Method</td>
-                    <td><?php echo $clustering_m ?></td>
-                  </tr>
-                  <tr>
-                    <td>Notes</td>
-                    <td><?php echo $notes ?></td>
+                    <td>Blastn output</td>
+                    <td><?php echo $blastn_output ?></td>
                   </tr>
                 </table>
             </div>
