@@ -27,16 +27,9 @@
       <file leaf-file-name="searchBySequence.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/searchBySequence.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
-              <folding>
-                <element signature="e#2877#2932#0#PHP" expanded="true" />
-                <marker date="1479467203000" expanded="true" signature="3111:3328" ph="..." />
-                <marker date="1479467203000" expanded="true" signature="3147:3214" ph="..." />
-                <marker date="1479467203000" expanded="true" signature="3588:3636" ph="SELECT * FRO... jobs" />
-                <marker date="1479467203000" expanded="true" signature="3776:4010" ph="..." />
-                <marker date="1479467203000" expanded="true" signature="3812:3879" ph="..." />
-              </folding>
+            <state relative-caret-position="224">
+              <caret line="105" column="26" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -242,12 +235,12 @@
       <workItem from="1478786944552" duration="2090000" />
       <workItem from="1479116089492" duration="174000" />
       <workItem from="1479312048422" duration="6165000" />
-      <workItem from="1479442745929" duration="3003000" />
+      <workItem from="1479442745929" duration="3465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16866000" />
+    <option name="totallyTimeSpent" value="17328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
@@ -259,7 +252,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3057325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1566879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1566879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -293,14 +286,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2877#2932#0#PHP" expanded="true" />
-            <marker date="1479467203000" expanded="true" signature="3111:3328" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3147:3214" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3588:3636" ph="SELECT * FRO... jobs" />
-            <marker date="1479467203000" expanded="true" signature="3776:4010" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3812:3879" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -336,14 +322,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2877#2932#0#PHP" expanded="true" />
-            <marker date="1479467203000" expanded="true" signature="3111:3328" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3147:3214" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3588:3636" ph="SELECT * FRO... jobs" />
-            <marker date="1479467203000" expanded="true" signature="3776:4010" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3812:3879" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -359,14 +338,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2877#2932#0#PHP" expanded="true" />
-            <marker date="1479467203000" expanded="true" signature="3111:3328" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3147:3214" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3588:3636" ph="SELECT * FRO... jobs" />
-            <marker date="1479467203000" expanded="true" signature="3776:4010" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3812:3879" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -382,14 +354,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2877#2932#0#PHP" expanded="true" />
-            <marker date="1479467203000" expanded="true" signature="3111:3328" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3147:3214" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3588:3636" ph="SELECT * FRO... jobs" />
-            <marker date="1479467203000" expanded="true" signature="3776:4010" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3812:3879" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -405,14 +370,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2877#2932#0#PHP" expanded="true" />
-            <marker date="1479467203000" expanded="true" signature="3111:3328" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3147:3214" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3588:3636" ph="SELECT * FRO... jobs" />
-            <marker date="1479467203000" expanded="true" signature="3776:4010" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3812:3879" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -428,14 +386,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2877#2932#0#PHP" expanded="true" />
-            <marker date="1479467203000" expanded="true" signature="3111:3328" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3147:3214" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3588:3636" ph="SELECT * FRO... jobs" />
-            <marker date="1479467203000" expanded="true" signature="3776:4010" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3812:3879" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -451,14 +402,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1905">
           <caret line="127" column="82" selection-start-line="127" selection-start-column="82" selection-end-line="127" selection-end-column="82" />
-          <folding>
-            <element signature="e#2877#2932#0#PHP" expanded="true" />
-            <marker date="1479467203000" expanded="true" signature="3111:3328" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3147:3214" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3588:3636" ph="SELECT * FRO... jobs" />
-            <marker date="1479467203000" expanded="true" signature="3776:4010" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3812:3879" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -513,16 +457,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/searchBySequence.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="123" column="49" selection-start-line="123" selection-start-column="49" selection-end-line="123" selection-end-column="49" />
-          <folding>
-            <element signature="e#2877#2932#0#PHP" expanded="true" />
-            <marker date="1479467203000" expanded="true" signature="3111:3328" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3147:3214" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3588:3636" ph="SELECT * FRO... jobs" />
-            <marker date="1479467203000" expanded="true" signature="3776:4010" ph="..." />
-            <marker date="1479467203000" expanded="true" signature="3812:3879" ph="..." />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="105" column="26" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

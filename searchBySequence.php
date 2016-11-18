@@ -97,31 +97,11 @@ tr:nth-child(even) {
         <div class="col-lg-12">
 
             <?php
-//            // Connect to server and select database.
-//            $link = mysqli_connect("localhost", "callsobing", "wannatobetop", "varclust") or
-//            die("
-//                <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
-//                <use xlink:href=\"#stroked-cancel\"></use></svg>Oops, Something went wrong. Seems like we are facing some technical issues during connecting to database....</div><img src=\"img/sorry.jpg\">
-//                <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
-//            ");
-//
-//            // Check if user already has more than 2 jobs in queue.
-//            $token = $_POST["email"];
-//            $sql = "SELECT * FROM `jobs` WHERE `user_token`='$token'";
-//            $result = mysqli_query($link, $sql) or
-//            die ("
-//                <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
-//                <use xlink:href=\"#stroked-cancel\"></use></svg>Oooops, Something went wrong. Seems like we are facing some technical issues during selecting new records in the database....</div><img src=\"img/sorry.jpg\">
-//                <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
-//            ");
-//
+
 //            $email = $_POST["email"];
             $sequence = $_POST["sequence"];
             $job_id = "putella_seq_" . md5(uniqid(rand()));
-            $path_prefix = "~/../lc1024/public_html/var/www/html/putella/record/";
-
-
-            echo "input sequence was: $sequence\n";
+            $path_prefix = "~lc1024/var/www/html/putella/record/";
 
             exec("pwd 2>&1', $output");
             print_r($output);
@@ -167,6 +147,10 @@ tr:nth-child(even) {
                   <tr>
                     <td>Job ID</td>
                     <td><?php echo $job_id ?></td>
+                  </tr>
+                  <tr>
+                    <td>Query sequence</td>
+                    <td><?php echo $sequence ?></td>
                   </tr>
                   <tr>
                     <td>Blastn output</td>
