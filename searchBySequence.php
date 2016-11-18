@@ -108,6 +108,8 @@ tr:nth-child(even) {
             exec("cat $path_prefix$job_id.output", $output_file);
 
             exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output);
+            system("blastn -db ~/../callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
+            system("ls");
 
             echo "\nblastn_output:";
             print_r($blastn_output);
