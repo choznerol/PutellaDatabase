@@ -103,20 +103,12 @@ tr:nth-child(even) {
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "var/";
 
-            echo("pwd: ");
-            system("pwd");
-
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
-
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output");
-
             exec("cat $path_prefix$job_id.output", $blastn_output);
 
-
-            echo "<br>blastn_output:<br>";
-            print_r($blastn_output);
-            print_r($blastn_output[0]);
-
+//            echo "<br>blastn_output:<br>";
+//            print_r($blastn_output);
             ?>
 
             <div class="alert bg-success" role="alert">
@@ -144,7 +136,7 @@ tr:nth-child(even) {
                   </tr>
                   <tr>
                     <td>Blastn output</td>
-                    <td><?php echo $blastn_output ?></td>
+                    <td><?php print_r($blastn_output) ?></td>
                   </tr>
                 </table>
             </div>
