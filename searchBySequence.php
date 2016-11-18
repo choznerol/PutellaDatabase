@@ -108,11 +108,11 @@ tr:nth-child(even) {
 
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
 
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 -query $path_prefix$job_id.fasta
+            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100
             > $path_prefix$job_id.output 
             2> $path_prefix$job_id.err");
 
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 -query example.fasta
+            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100
             > var/example_$job_id.output 
             2> var/example_$job_id.err");
 

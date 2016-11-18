@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f90ab659-238d-45b3-9c32-8c7749d1599e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searchBySequence.php" afterPath="$PROJECT_DIR$/searchBySequence.php" />
     </list>
     <ignored path="PutellaDatabase.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -220,12 +219,12 @@
       <workItem from="1478786944552" duration="2090000" />
       <workItem from="1479116089492" duration="174000" />
       <workItem from="1479312048422" duration="6165000" />
-      <workItem from="1479442745929" duration="11803000" />
+      <workItem from="1479442745929" duration="11924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25666000" />
+    <option name="totallyTimeSpent" value="25787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
