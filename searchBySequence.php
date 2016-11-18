@@ -101,18 +101,24 @@ tr:nth-child(even) {
 //            $email = $_POST["email"];
             $sequence = $_POST["sequence"];
             $job_id = "putella_seq_" . md5(uniqid(rand()));
-            $path_prefix = "seq";
+            $path_prefix = "var/";
 
-            exec("echo \"$sequence\" > var/$job_id.fasta");
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > var/$job_id.output 2> var/$job_id.err");
-            exec("cat var/$job_id.output", $output_file);
+            echo("pwd: " . system("pwd"));
 
-//            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output);
+            exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
+            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefixjob_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output 2> $path_prefix$job_id.err");
+            exec("cat $path_prefix$job_id.output", $output_file);
+
+            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100", $blastn_output);
 //            system("blastn -db /home/callsobing/putella/putella_cufflinks -query var/example.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100");
 //            system("ls");
 //
-//            echo "\nblastn_output:";
+            echo "<br>output_file:";
             print_r($output_file);
+
+            echo "<br>blastn_output:";
+            print_r($blastn_output);
+
             ?>
 
             <div class="alert bg-success" role="alert">
