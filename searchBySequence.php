@@ -120,12 +120,24 @@ tr:nth-child(even) {
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "~/../lc1024/public_html/var/www/html/putella/record/";
 
+            exec("pwd 2>&1', $output");
+            print_r($output);
             exec("mkdir -m 777 $path_prefix$job_id");
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
             exec("blastn -db ~/../callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 >$path_prefix$job_id.output");
 
             $arg = $sequence."!?";
             echo "input sequence was: $arg";
+
+
+
+            function debug_to_console( $data ) {
+                if ( is_array( $data ) )
+                    $output = "<script>console.log( 'Debug Objects: " . implode( ',', $data) . "' );</script>";
+                else
+                    $output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
+                echo $output;
+            }
 
             ?>
 
