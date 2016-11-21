@@ -98,7 +98,7 @@ tr:nth-child(even) {
 
             <?php
 
-//            $email = $_POST["email"];
+            $email = $_POST["email"];
             $sequence = $_POST["sequence"];
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "var/";
