@@ -66,17 +66,17 @@ tr:nth-child(even) {
                     <use xlink:href="#stroked-home"/>
                 </svg>
                 Introduction</a></li>
-        <li><a href="submit.html">
+        <li><a href="SubmitJob.html">
                 <svg class="glyph stroked dashboard dial">
                     <use xlink:href="#stroked-dashboard-dial"/>
                 </svg>
                 Submit Job </a></li>
-        <li><a href="job_status.php">
+        <li><a href="JobStatus.html">
                 <svg class="glyph stroked clipboard with paper">
                     <use xlink:href="#stroked-clipboard-with-paper"/>
                 </svg>
                 Job Status</a></li>
-        <li><a href="result.php">
+        <li><a href="Results.html">
                 <svg class="glyph stroked line-graph">
                     <use xlink:href="#stroked-line-graph"></use>
                 </svg>
@@ -110,6 +110,9 @@ tr:nth-child(even) {
 //            echo "<br>blastn_output:<br>";
 //            print_r($blastn_output);
             ?>
+
+<!--//TODO blastn輸出表格-->
+<!--//TODO 找不到message-->
 
             <div class="alert bg-success" role="alert">
                 <svg class="glyph stroked checkmark">
