@@ -104,7 +104,7 @@ tr:nth-child(even) {
             $path_prefix = "var/";
 
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output");
+            exec("blastn -db /home/callsobing/putella/putella_cufflinks -outfmt 6 -num_threads 4 -evalue 0.001 -perc_identity 90 -task blastn -reward 1 -query $path_prefix$job_id.fasta > $path_prefix$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output);
 
 //            echo "<br>blastn_output:<br>";
