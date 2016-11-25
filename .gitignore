@@ -1,4 +1,6 @@
 .*
 !/.gitignore
 .idea/*
+*.fasta
+*.output
 test_*

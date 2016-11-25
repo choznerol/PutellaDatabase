@@ -66,17 +66,17 @@ tr:nth-child(even) {
                     <use xlink:href="#stroked-home"/>
                 </svg>
                 Introduction</a></li>
-        <li><a href="submit.html">
+        <li><a href="SubmitJob.html">
                 <svg class="glyph stroked dashboard dial">
                     <use xlink:href="#stroked-dashboard-dial"/>
                 </svg>
                 Submit Job </a></li>
-        <li><a href="job_status.php">
+        <li><a href="JobStatus.html">
                 <svg class="glyph stroked clipboard with paper">
                     <use xlink:href="#stroked-clipboard-with-paper"/>
                 </svg>
                 Job Status</a></li>
-        <li><a href="result.php">
+        <li><a href="Results.html">
                 <svg class="glyph stroked line-graph">
                     <use xlink:href="#stroked-line-graph"></use>
                 </svg>
@@ -98,18 +98,24 @@ tr:nth-child(even) {
 
             <?php
 
-//            $email = $_POST["email"];
+            $email = $_POST["email"];
             $sequence = $_POST["sequence"];
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "var/";
 
+            exec("whoami", $whoami);
+            echo $whoami;
+
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
-            exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output");
+            exec("blastn -db /home/callsobing/putella/putella_cufflinks -outfmt 6 -num_threads 4 -evalue 0.001 -perc_identity 90 -task blastn -reward 1 -query $path_prefix$job_id.fasta > $path_prefix$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output);
 
 //            echo "<br>blastn_output:<br>";
 //            print_r($blastn_output);
             ?>
+
+<!--//TODO blastn輸出表格-->
+<!--//TODO 找不到message-->
 
             <div class="alert bg-success" role="alert">
                 <svg class="glyph stroked checkmark">
