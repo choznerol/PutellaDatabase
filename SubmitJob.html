@@ -142,7 +142,7 @@
             else 
                 URLs="searchBySequence.php";
             
-            $('<form action="'+URLs+'" method="POST"><input type="hidden" name="sequence" value="'+query.value+'"></form>').appendTo('body').submit();
+            $('<form action="'+URLs+'" method="POST"><input type="hidden" name="sequence" value="'+query.value+'"><input type="hidden" name="email" value="'+mail.value+'"></form>').appendTo('body').submit();
 
 //            $.post(URLs, {query: query.value} )
 //                .done(function(data) {

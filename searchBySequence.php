@@ -98,11 +98,17 @@ tr:nth-child(even) {
 
             <?php
 
-//            $email = $_POST["email"];
+            $email = $_POST["email"];
+            $method = "sequence" ;
             $sequence = $_POST["sequence"];
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "var/";
 
+            mysql_connect("http://140.112.94.72/~callsobing", "callsobing", "wannabethetop") or die("sql connect fail!");
+            mysql_select_db("varclust") or die("database connect fail!");
+            $sql="insert into putella_jobs values($job_id,$email,$method,$sequence)"; 
+            mysql_query($sql);
+            
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output);
