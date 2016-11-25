@@ -115,7 +115,7 @@ tr:nth-child(even) {
 
             echo "<br>blastn_output:<br>";
             print_r($blastn_output);
-            print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+            print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
             ?>
 
             <div class="alert bg-success" role="alert">
