@@ -113,8 +113,9 @@ tr:nth-child(even) {
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output);
 
-//            echo "<br>blastn_output:<br>";
-//            print_r($blastn_output);
+            echo "<br>blastn_output:<br>";
+            print_r($blastn_output);
+            print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
             ?>
 
             <div class="alert bg-success" role="alert">
