@@ -104,7 +104,7 @@ tr:nth-child(even) {
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "var/";
 
-            mysql_connect("http://140.112.94.72/~callsobing", "callsobing", "wannabethetop") or die("sql connect fail!");
+            mysql_connect("http://140.112.94.72/~callsobing", "callsobing", "wannatobetop") or die("sql connect fail!");
             mysql_select_db("varclust") or die("database connect fail!");
             $sql="insert into putella_jobs values($job_id,$email,$method,$sequence)"; 
             mysql_query($sql);
