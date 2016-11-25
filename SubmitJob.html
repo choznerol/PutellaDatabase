@@ -93,19 +93,19 @@
 									<label>Search type</label>
 									<div class="radio">
 										<label>
-											<input type="radio" name="searchType" id="optionsRadios1" value="1" checked>Search by text
+											<input type="radio" name="searchType" onclick="handleClick(this);" value="1" checked >Search by text
 										</label>
 									</div>
 									<div class="radio">
 										<label>
-											<input type="radio" name="searchType" id="optionsRadios2" value="2">Search by sequence
+											<input type="radio" name="searchType" onclick="handleClick(this);" value="2">Search by sequence
 										</label>
 									</div>
 								</div>
                                 
-                                <div class="form-group">
+                                <div class="form-group" id="demo">
 									<label>Search Content</label>
-									<input name="query" class="form-control" placeholder="Leave some queries as the search term here!">
+									<input name="query" class="form-control" placeholder="Leave some text as the search term here!">
 								</div>
 								
 								<button type="button" onclick="submitJob(mail,species,searchType,query)" class="btn btn-primary">Submit</button>
@@ -130,6 +130,13 @@
     
 
 	<script>
+        
+        function handleClick(searchType) {
+            if(searchType.value==1)
+                document.getElementById("demo").innerHTML = '<label>Search Content</label><input name="query" class="form-control" placeholder="Leave some text as the search term here!">';
+            else
+                document.getElementById("demo").innerHTML = '<label>Search Content</label><textarea rows="4" name="query" class="form-control" placeholder="Leave some sequence as the search term here!"></textarea>';
+        }
         
         function submitJob(mail,species,searchType,query) {
             
