@@ -103,6 +103,9 @@ tr:nth-child(even) {
             $job_id = "putella_seq_" . md5(uniqid(rand()));
             $path_prefix = "var/";
 
+            exec("whoami", $whoami);
+            echo $whoami;
+
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -outfmt 6 -num_threads 4 -evalue 0.001 -perc_identity 90 -task blastn -reward 1 -query $path_prefix$job_id.fasta > $path_prefix$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output);
