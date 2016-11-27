@@ -119,11 +119,10 @@
                 <svg class="glyph stroked checkmark">
                     <use xlink:href="#stroked-checkmark"></use>
                 </svg>
-                Done Blast job. Result also saved to http://140.112.94.72/~<?php echo(exec("whoami")) ?>/PutellaDatabase/var/ <a href="#" class="pull-right"><span
+                Done Blast job. Result also saved to http://140.112.94.72/~<?php echo(exec('cd ../..; basename $PWD')) ?>/PutellaDatabase/var/ <a href="#" class="pull-right"><span
                         class="glyphicon glyphicon-remove"></span></a>
             </div>
             <!--            <meta http-equiv="refresh" content="5;url=job_status.php">-->
-
             <div class="col-lg-12">
                 <label>Job Submission Summary</label>
                 <table>
