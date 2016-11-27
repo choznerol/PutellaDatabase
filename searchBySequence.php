@@ -88,7 +88,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Job Submission Status</h1>
+            <h1 class="page-header">Search By Sequence Result</h1>
         </div>
     </div><!--/.row-->
 
@@ -113,25 +113,13 @@
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output);
             $blastn_output_arr = explode("\t", $blastn_output[0]);
-            $pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
-            //$pizza = $blastn_output[0];
-            echo $pizza;
-            $pieces = explode(" ", $pizza);
-            echo $pieces[0]; // piece1
-            echo $pieces[1]; // piece2
-            echo $pieces[5];
-
-            //		print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
-            //          	echo "<br>blastn_output:<br>";
-            //           	print_r($blastn_output);
-            //           	print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
             ?>
 
             <div class="alert bg-success" role="alert">
                 <svg class="glyph stroked checkmark">
                     <use xlink:href="#stroked-checkmark"></use>
                 </svg>
-                Done Blast. Query and report saved to http://140.112.94.72/~lc1024/PutellaDatabase/var/ <a href="#" class="pull-right"><span
+                Done Blast job. Result also saved to http://140.112.94.72/~<?php echo(exec("whoami")) ?>/PutellaDatabase/var/ <a href="#" class="pull-right"><span
                         class="glyphicon glyphicon-remove"></span></a>
             </div>
             <!--            <meta http-equiv="refresh" content="5;url=job_status.php">-->
@@ -150,32 +138,7 @@
                     <tr>
                         <td>Query sequence</td>
                         <td><?php echo $sequence ?></td>
-                    </tr>
-                    <tr>
-                        <td>Blastn output</td>
-                        <td><?php print_r($blastn_output) ?></td>
-                    </tr>
-                    <tr>
-                        <td>Blastn output</td>
-                        <td><?php print_r($blastn_output_arr) ?></td>
-                    </tr>
                 </table>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">Advanced Table</div>
-                    <div class="panel-body">
-                        <table data-toggle="table" data-url="var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
-                            <thead>
-                            <tr>
-                                <th data-field="state" data-checkbox="true" >Item ID</th>
-                                <th data-field="id" data-sortable="true">Item ID</th>
-                                <th data-field="name"  data-sortable="true">Item Name</th>
-                                <th data-field="price" data-sortable="true">Item Price</th>
-                            </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
 
                 <div class="panel panel-default">
                     <div class="panel-heading">Blastn Result</div>
@@ -196,31 +159,27 @@
                                 <th data-checkbox="true" >bit score</th>
                             </tr>
                             <?Php
-                            $f = fopen("var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output", "r");
-                            $fr = fread($f, filesize("var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output"));
+                            $f = fopen("$path_prefix$job_id.output", "r");
+                            $fr = fread($f, filesize("$path_prefix$job_id.output"));
                             fclose($f);
                             $lines = array();
-                            $lines = explode("\t",$fr); // IMPORTANT the delimiter here just the "new line" \r\n, use what u need instead of...
+                            $lines = explode("\n",$fr); // IMPORTANT the delimiter here just the "new line" \r\n, use what u need instead of...
 
-                            for($i=0;$i<count($lines);$i++)
+                            for($i=0;$i<count($lines)-1;$i++)
                             {
                                 echo "<tr>";
                                 $cells = array();
-                                $cells = explode(";",$lines[$i]); // use the cell/row delimiter what u need!
+                                $cells = explode("\t",$lines[$i]); // use the cell/row delimiter what u need!
                                 for($k=0;$k<count($cells);$k++)
                                 {
                                     echo "<td>".$cells[$k]."</td>";
                                 }
-                                // for k end
-                                echo "</tr>";
+				echo "</tr>";
                             }
-                            // for i end
-                            echo "</table>";
                             ?>
-
+			</table>
                     </div>
                 </div>
-
             </div>
         </div>
     </div><!--/.row-->
