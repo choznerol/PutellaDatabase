@@ -135,6 +135,33 @@
                         class="glyphicon glyphicon-remove"></span></a>
             </div>
             <!--            <meta http-equiv="refresh" content="5;url=job_status.php">-->
+
+	<div class="col-lg-12">
+<?Php 
+echo "<table border=1>";
+$f = fopen("var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output", "r");
+$fr = fread($f, filesize("var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output"));
+fclose($f);
+$lines = array();
+$lines = explode("\t",$fr); // IMPORTANT the delimiter here just the "new line" \r\n, use what u need instead of... 
+
+for($i=0;$i<count($lines);$i++)
+{
+    echo "<tr>";
+    $cells = array(); 
+    $cells = explode(";",$lines[$i]); // use the cell/row delimiter what u need!
+    for($k=0;$k<count($cells);$k++)
+    {
+       echo "<td>".$cells[$k]."</td>";
+    }
+    // for k end
+    echo "</tr>";
+}
+// for i end
+echo "</table>";
+?> 
+	</div>
+
             <div class="col-lg-12">
                 <label>Job Submission Summary</label>
                 <table>
