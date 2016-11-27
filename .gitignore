@@ -1,6 +1,5 @@
 .*
 !/.gitignore
 .idea/*
-*.fasta
-*.output
+var/*
 test_*
