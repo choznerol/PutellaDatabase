@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lumino - Panels</title>
+    <title>PutellaDatabase - Submit Jobs</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/datepicker3.css" rel="stylesheet">
@@ -20,21 +20,21 @@
 </head>
 
 <style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
 </style>
 
 <body>
@@ -106,25 +106,25 @@ tr:nth-child(even) {
 
             mysql_connect("localhost", "callsobing", "wannatobetop") or die("sql connect fail!");
             mysql_select_db("varclust") or die("database connect fail!");
-            $sql="insert into putella_jobs (jobid,email,method,query) values ('$job_id','$email','$method','$sequence')"; 
+            $sql="insert into putella_jobs (jobid,email,method,query) values ('$job_id','$email','$method','$sequence')";
             mysql_query($sql) or die("insert fail");
-            
+
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output);
-	    $blastn_output_arr = explode("\t", $blastn_output[0]);
-$pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
-//$pizza = $blastn_output[0];
-echo $pizza;
-$pieces = explode(" ", $pizza);
-echo $pieces[0]; // piece1
-echo $pieces[1]; // piece2
-echo $pieces[5];
-		
-//		print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
-//          	echo "<br>blastn_output:<br>";
-//           	print_r($blastn_output);
-//           	print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+            $blastn_output_arr = explode("\t", $blastn_output[0]);
+            $pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
+            //$pizza = $blastn_output[0];
+            echo $pizza;
+            $pieces = explode(" ", $pizza);
+            echo $pieces[0]; // piece1
+            echo $pieces[1]; // piece2
+            echo $pieces[5];
+
+            //		print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+            //          	echo "<br>blastn_output:<br>";
+            //           	print_r($blastn_output);
+            //           	print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
             ?>
 
             <div class="alert bg-success" role="alert">
@@ -134,46 +134,46 @@ echo $pieces[5];
                 Done Blast. Query and report saved to http://140.112.94.72/~lc1024/PutellaDatabase/var/ <a href="#" class="pull-right"><span
                         class="glyphicon glyphicon-remove"></span></a>
             </div>
-<!--            <meta http-equiv="refresh" content="5;url=job_status.php">-->
+            <!--            <meta http-equiv="refresh" content="5;url=job_status.php">-->
             <div class="col-lg-12">
                 <label>Job Submission Summary</label>
                 <table>
-                  <tr>
-                    <td>E-mail</td>
-                    <td><?php echo $email ?>
-                  </tr>
-                  <tr>
-                    <td>Job ID</td>
-                    <td><?php echo $job_id ?></td>
-                  </tr>
-                  <tr>
-                    <td>Query sequence</td>
-                    <td><?php echo $sequence ?></td>
-                  </tr>
-                  <tr>
-                    <td>Blastn output</td>
-                    <td><?php print_r($blastn_output) ?></td>
-                  </tr>
-                  <tr>
-                    <td>Blastn output</td>
-                    <td><?php print_r($blastn_output_arr) ?></td>
-                  </tr>
+                    <tr>
+                        <td>E-mail</td>
+                        <td><?php echo $email ?>
+                    </tr>
+                    <tr>
+                        <td>Job ID</td>
+                        <td><?php echo $job_id ?></td>
+                    </tr>
+                    <tr>
+                        <td>Query sequence</td>
+                        <td><?php echo $sequence ?></td>
+                    </tr>
+                    <tr>
+                        <td>Blastn output</td>
+                        <td><?php print_r($blastn_output) ?></td>
+                    </tr>
+                    <tr>
+                        <td>Blastn output</td>
+                        <td><?php print_r($blastn_output_arr) ?></td>
+                    </tr>
                 </table>
-<div class="panel panel-default">
-					<div class="panel-heading">Advanced Table</div>
-					<div class="panel-body">
-						<table data-toggle="table" data-url="var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
-						    <thead>
-						    <tr>
-						        <th data-field="state" data-checkbox="true" >Item ID</th>
-						        <th data-field="id" data-sortable="true">Item ID</th>
-						        <th data-field="name"  data-sortable="true">Item Name</th>
-						        <th data-field="price" data-sortable="true">Item Price</th>
-						    </tr>
-						    </thead>
-						</table>
-					</div>
-				</div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Advanced Table</div>
+                    <div class="panel-body">
+                        <table data-toggle="table" data-url="var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                            <thead>
+                            <tr>
+                                <th data-field="state" data-checkbox="true" >Item ID</th>
+                                <th data-field="id" data-sortable="true">Item ID</th>
+                                <th data-field="name"  data-sortable="true">Item Name</th>
+                                <th data-field="price" data-sortable="true">Item Price</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div><!--/.row-->
