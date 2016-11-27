@@ -136,32 +136,6 @@
             </div>
             <!--            <meta http-equiv="refresh" content="5;url=job_status.php">-->
 
-	<div class="col-lg-12">
-<?Php 
-echo "<table border=1>";
-$f = fopen("var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output", "r");
-$fr = fread($f, filesize("var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output"));
-fclose($f);
-$lines = array();
-$lines = explode("\t",$fr); // IMPORTANT the delimiter here just the "new line" \r\n, use what u need instead of... 
-
-for($i=0;$i<count($lines);$i++)
-{
-    echo "<tr>";
-    $cells = array(); 
-    $cells = explode(";",$lines[$i]); // use the cell/row delimiter what u need!
-    for($k=0;$k<count($cells);$k++)
-    {
-       echo "<td>".$cells[$k]."</td>";
-    }
-    // for k end
-    echo "</tr>";
-}
-// for i end
-echo "</table>";
-?> 
-	</div>
-
             <div class="col-lg-12">
                 <label>Job Submission Summary</label>
                 <table>
@@ -186,6 +160,7 @@ echo "</table>";
                         <td><?php print_r($blastn_output_arr) ?></td>
                     </tr>
                 </table>
+
                 <div class="panel panel-default">
                     <div class="panel-heading">Advanced Table</div>
                     <div class="panel-body">
@@ -201,6 +176,51 @@ echo "</table>";
                         </table>
                     </div>
                 </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Blastn Result</div>
+                    <div class="panel-body">
+                        <table data-toggle="table" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                            <tr>
+                                <th data-checkbox="true" >Query</th>
+                                <th data-checkbox="true" >Subject</th>
+                                <th data-checkbox="true" >% id</th>
+                                <th data-checkbox="true" >alignment length</th>
+                                <th data-checkbox="true" >mismatches</th>
+                                <th data-checkbox="true" >gap openings</th>
+                                <th data-checkbox="true" >q.start</th>
+                                <th data-checkbox="true" >q.end</th>
+                                <th data-checkbox="true" >s.start</th>
+                                <th data-checkbox="true" >s.end</th>
+                                <th data-checkbox="true" >e-value</th>
+                                <th data-checkbox="true" >bit score</th>
+                            </tr>
+                            <?Php
+                            $f = fopen("var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output", "r");
+                            $fr = fread($f, filesize("var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output"));
+                            fclose($f);
+                            $lines = array();
+                            $lines = explode("\t",$fr); // IMPORTANT the delimiter here just the "new line" \r\n, use what u need instead of...
+
+                            for($i=0;$i<count($lines);$i++)
+                            {
+                                echo "<tr>";
+                                $cells = array();
+                                $cells = explode(";",$lines[$i]); // use the cell/row delimiter what u need!
+                                for($k=0;$k<count($cells);$k++)
+                                {
+                                    echo "<td>".$cells[$k]."</td>";
+                                }
+                                // for k end
+                                echo "</tr>";
+                            }
+                            // for i end
+                            echo "</table>";
+                            ?>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </div><!--/.row-->
