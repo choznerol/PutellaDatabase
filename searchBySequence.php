@@ -112,10 +112,19 @@ tr:nth-child(even) {
             exec("echo \"$sequence\" > $path_prefix$job_id.fasta");
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output);
-
-            echo "<br>blastn_output:<br>";
-            print_r($blastn_output);
-            print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+	    $blastn_output_arr = explode("\t", $blastn_output[0]);
+$pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
+//$pizza = $blastn_output[0];
+echo $pizza;
+$pieces = explode(" ", $pizza);
+echo $pieces[0]; // piece1
+echo $pieces[1]; // piece2
+echo $pieces[5];
+		
+//		print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+//          	echo "<br>blastn_output:<br>";
+//           	print_r($blastn_output);
+//           	print_r("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
             ?>
 
             <div class="alert bg-success" role="alert">
@@ -129,10 +138,10 @@ tr:nth-child(even) {
             <div class="col-lg-12">
                 <label>Job Submission Summary</label>
                 <table>
-<!--                  <tr>-->
-<!--                    <td>E-mail</td>-->
-<!--                    <td>--><?php //echo $email ?><!--</td>-->
-<!--                  </tr>-->
+                  <tr>
+                    <td>E-mail</td>
+                    <td><?php echo $email ?>
+                  </tr>
                   <tr>
                     <td>Job ID</td>
                     <td><?php echo $job_id ?></td>
@@ -145,7 +154,26 @@ tr:nth-child(even) {
                     <td>Blastn output</td>
                     <td><?php print_r($blastn_output) ?></td>
                   </tr>
+                  <tr>
+                    <td>Blastn output</td>
+                    <td><?php print_r($blastn_output_arr) ?></td>
+                  </tr>
                 </table>
+<div class="panel panel-default">
+					<div class="panel-heading">Advanced Table</div>
+					<div class="panel-body">
+						<table data-toggle="table" data-url="var/putella_seq_1dee377eeb44501b9e4763d732a339c7.output"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						    <thead>
+						    <tr>
+						        <th data-field="state" data-checkbox="true" >Item ID</th>
+						        <th data-field="id" data-sortable="true">Item ID</th>
+						        <th data-field="name"  data-sortable="true">Item Name</th>
+						        <th data-field="price" data-sortable="true">Item Price</th>
+						    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
             </div>
         </div>
     </div><!--/.row-->
