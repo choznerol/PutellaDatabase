@@ -19,6 +19,23 @@
 
 </head>
 
+    <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
@@ -69,24 +86,26 @@
 					<div class="panel-heading">Get your Job result</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form" action="Results.php" method="get">
+							<form action="Results.php" method="get">
 							
 								<div class="form-group">
 									<label>Your Job_id:</label>
 									<input class="form-control" name="jobid" placeholder="type-in your job id here...">
 								</div>
-	
 								<button type="submit" class="btn btn-primary">Submit</button>
 								<button type="reset" class="btn btn-default">Reset</button>
 							
 						    </form>
-                        </div>
+				        </div>
 					</div>
 				</div>
 			</div><!-- /.col-->
 		</div><!-- /.row -->
-		
-        <div class="panel-heading">Blastn Result</div>
+        
+		<div class="col-lg-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Blastn Result</div>
                     <div class="panel-body">
                         <table data-toggle="table" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
                             <tr>
@@ -104,29 +123,33 @@
                                 <th data-checkbox="true" >bit score</th>
                             </tr>
                             <?Php
-                            $job_id = $_GET["jobid"]
-                            $f = fopen("$path_prefix$job_id.output", "r");
-                            $fr = fread($f, filesize("$path_prefix$job_id.output"));
-                            fclose($f);
-                            $lines = array();
-                            $lines = explode("\n",$fr); // IMPORTANT the delimiter here just the "new line" \r\n, use what u need instead of...
+                                $path_prefix = "var/";
+                                $job_id = $_GET["jobid"];
+                                
+                                if($job_id!=null) {
+                                    $f = fopen("$path_prefix$job_id.output", "r");
+                                    $fr = fread($f, filesize("$path_prefix$job_id.output"));
+                                    fclose($f);
+                                    $lines = array();
+                                    $lines = explode("\n",$fr); // IMPORTANT the delimiter here just the "new line" \r\n, use what u need instead of...
 
-                            for($i=0;$i<count($lines)-1;$i++)
-                            {
-                                echo "<tr>";
-                                $cells = array();
-                                $cells = explode("\t",$lines[$i]); // use the cell/row delimiter what u need!
-                                for($k=0;$k<count($cells);$k++)
-                                {
-                                    echo "<td>".$cells[$k]."</td>";
+                                    for($i=0;$i<count($lines)-1;$i++)
+                                    {
+                                        echo "<tr>";
+                                        $cells = array();
+                                        $cells = explode("\t",$lines[$i]); // use the cell/row delimiter what u need!
+                                        for($k=0;$k<count($cells);$k++)
+                                        {
+                                            echo "<td>".$cells[$k]."</td>";
+                                        }
+                                        echo "</tr>";
+                                    }
                                 }
-                                echo "</tr>";
-                            }
                             ?>
                         </table>
                     </div>
-                </div>
-        
+            </div>
+        </div>
 	</div><!--/.main-->
 
 	<script src="js/jquery-1.11.1.min.js"></script>
