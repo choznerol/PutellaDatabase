@@ -76,7 +76,7 @@
                     <use xlink:href="#stroked-clipboard-with-paper"/>
                 </svg>
                 Job Status</a></li>
-        <li><a href="Results.html">
+        <li><a href="Results.php">
                 <svg class="glyph stroked line-graph">
                     <use xlink:href="#stroked-line-graph"></use>
                 </svg>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PutellaDatabase - Results</title>
+<title>Lumino - Forms</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
@@ -16,7 +16,7 @@
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>
 <![endif]-->
-<!--TODO: .../PutellaDatabase/Results?=<job_id> (以job id 搜尋，print出表格) -->
+
 </head>
 
 <body>
@@ -47,7 +47,7 @@
             
             <li><a href="SubmitJob.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Submit Jobs</a></li>
             <li><a href="JobStatus.html"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Jobs Status</a></li>
-            <li class="active"><a href="Results.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Results</a></li>
+            <li class="active"><a href="Results.php"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Results</a></li>
 
 		</ul>
 
@@ -69,22 +69,64 @@
 					<div class="panel-heading">Get your Job result</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form">
+							<form role="form" action="Results.php" method="get">
 							
 								<div class="form-group">
 									<label>Your Job_id:</label>
-									<input class="form-control" placeholder="type-in your job id here...">
+									<input class="form-control" name="jobid" placeholder="type-in your job id here...">
 								</div>
 	
 								<button type="submit" class="btn btn-primary">Submit</button>
 								<button type="reset" class="btn btn-default">Reset</button>
-							</div>
-						</form>
+							
+						    </form>
+                        </div>
 					</div>
 				</div>
 			</div><!-- /.col-->
 		</div><!-- /.row -->
 		
+        <div class="panel-heading">Blastn Result</div>
+                    <div class="panel-body">
+                        <table data-toggle="table" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+                            <tr>
+                                <th data-checkbox="true" >Query</th>
+                                <th data-checkbox="true" >Subject</th>
+                                <th data-checkbox="true" >% id</th>
+                                <th data-checkbox="true" >alignment length</th>
+                                <th data-checkbox="true" >mismatches</th>
+                                <th data-checkbox="true" >gap openings</th>
+                                <th data-checkbox="true" >q.start</th>
+                                <th data-checkbox="true" >q.end</th>
+                                <th data-checkbox="true" >s.start</th>
+                                <th data-checkbox="true" >s.end</th>
+                                <th data-checkbox="true" >e-value</th>
+                                <th data-checkbox="true" >bit score</th>
+                            </tr>
+                            <?Php
+                            $job_id = $_GET["jobid"]
+                            $f = fopen("$path_prefix$job_id.output", "r");
+                            $fr = fread($f, filesize("$path_prefix$job_id.output"));
+                            fclose($f);
+                            $lines = array();
+                            $lines = explode("\n",$fr); // IMPORTANT the delimiter here just the "new line" \r\n, use what u need instead of...
+
+                            for($i=0;$i<count($lines)-1;$i++)
+                            {
+                                echo "<tr>";
+                                $cells = array();
+                                $cells = explode("\t",$lines[$i]); // use the cell/row delimiter what u need!
+                                for($k=0;$k<count($cells);$k++)
+                                {
+                                    echo "<td>".$cells[$k]."</td>";
+                                }
+                                echo "</tr>";
+                            }
+                            ?>
+                        </table>
+                    </div>
+                </div>
+        
 	</div><!--/.main-->
 
 	<script src="js/jquery-1.11.1.min.js"></script>
