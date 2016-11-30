@@ -114,8 +114,8 @@
             exec("cat $path_prefix$job_id.output", $blastn_output);
             $blastn_output_arr = explode("\t", $blastn_output[0]);
             if($blastn_output[0]==null){
-                echo "NO RESULT";
-                exec ("echo 'No Result' > $path_prefix$job_id.output");
+//                echo "NO RESULT";
+                exec ("echo 'Blast return no result for $sequence' > $path_prefix$job_id.output");
             }
 
             ?>
@@ -124,7 +124,7 @@
                 <svg class="glyph stroked checkmark">
                     <use xlink:href="#stroked-checkmark"></use>
                 </svg>
-                Done Blast job. Result also saved to http://140.112.94.72/~<?php echo(exec('cd ../..; basename $PWD')) ?>/PutellaDatabase/var/ <a href="#" class="pull-right"><span
+                Done Blast job. Result also saved to <a href="http://140.112.94.72/~<?php echo(exec('cd ../..; basename $PWD')) ?>/PutellaDatabase/var/">here</a><a href="#" class="pull-right"><span
                         class="glyphicon glyphicon-remove"></span></a>
             </div>
             <!--            <meta http-equiv="refresh" content="5;url=job_status.php">-->
