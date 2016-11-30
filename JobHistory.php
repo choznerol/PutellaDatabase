@@ -67,17 +67,15 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">Find previous successful job(s).</div>
+				<div class="panel-heading">Find previous submitted job(s).</div>
 				<div class="panel-body">
 					<div class="col-md-6">
-						<form role="form">
+						<form action="JobHistory.php" method="get">
 
 							<div class="form-group">
 								<label>Your E-mail address:</label>
-								<input class="form-control" placeholder="type-in your email address here....">
+								<input name="user_token" class="form-control" placeholder="type-in your email address here....">
 							</div>
-
-
 							<button type="submit" class="btn btn-primary">Submit</button>
 							<button type="reset" class="btn btn-default">Reset</button>
 
@@ -87,6 +85,27 @@
 			</div>
 		</div><!-- /.col-->
 	</div><!-- /.row -->
+
+	<?php
+	$connection = mysqli_connect("localhost", "callsobing", "wannatobetop", "varclust") or
+	die("
+		<div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
+        <use xlink:href=\"#stroked-cancel\"></use></svg>Oops, Something went wrong. Seems like we have problem connecting to our database..</div><img src=\"img/sorry.jpg\">
+        <meta http-equiv=\"refresh\" content=\"5;url=JobHistory.php\">
+	");
+
+	$user_token = $_GET["user_token"];
+	$sql = "SELECT * FROM `putella_jobs` WHERE `email`='$user_token'";
+	$result = mysqli_query($connection, $sql) or
+	die ("
+        <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
+        <use xlink:href=\"#stroked-cancel\"></use></svg>No job submitted for user @</div><img src=\"img/sorry.jpg\">
+        <meta http-equiv=\"refresh\" content=\"5;url=JobHistory.php\">
+    ");
+
+	?>
+
+
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
