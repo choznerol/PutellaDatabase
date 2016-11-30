@@ -67,7 +67,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">Get your Job status</div>
+				<div class="panel-heading">Find previous successful job(s).</div>
 				<div class="panel-body">
 					<div class="col-md-6">
 						<form role="form">
@@ -90,20 +90,15 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">Job Status</div>
+				<div class="panel-heading">Job History</div>
 				<div class="panel-body">
 					<table data-toggle="table" data-url="./status"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						<thead>
 						<tr>
 							<th data-field="job_id" data-sortable="true">Job ID</th>
-							<th data-field="start" data-sortable="true">Chromosome</th>
-							<th data-field="end"  data-sortable="true">Start</th>
-							<th data-field="chromosome" data-sortable="true">End</th>
-							<th data-field="user_token" data-sortable="true" >E-mail</th>
-							<th data-field="status" data-sortable="true" >Status</th>
-							<th data-field="submit_date" data-sortable="true">Submit Date</th>
-							<th data-field="update_date"  data-sortable="true">Update Date</th>
-							<th data-field="note" data-sortable="no">note</th>
+							<th data-field="start" data-sortable="true">Submit Data</th>
+							<th data-field="submit_date" data-sortable="true">Status</th>
+							<th data-field="end"  data-sortable="true">Result</th>
 						</tr>
 						</thead>
 					</table>
