@@ -125,7 +125,7 @@
                             </tr>
                             <tr>
                                 <td>Query sequence</td>
-                                <td><?php echo $sequence ?></td>
+                                <td style="max-width: 100px;overflow: hidden;text-overflow: ellipsis; white-space: nowrap;"><?php echo $sequence ?></td>
                             </tr>
                             <tr>
                                 <td>Blast Result</td>
