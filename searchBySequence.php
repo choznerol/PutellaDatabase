@@ -113,6 +113,10 @@
             exec("blastn -db /home/callsobing/putella/putella_cufflinks -query $path_prefix$job_id.fasta -outfmt 6 -num_threads 4 -evalue 0.00000001 -perc_identity 100 > $path_prefix$job_id.output");
             exec("cat $path_prefix$job_id.output", $blastn_output);
             $blastn_output_arr = explode("\t", $blastn_output[0]);
+            if($blastn_output[0]==null){
+                echo "NO RESULT";
+                exec ("echo 'No Result' > $path_prefix$job_id.output");
+            }
 
             ?>
 
