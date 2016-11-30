@@ -117,14 +117,24 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Job History</div>
 				<div class="panel-body">
-					<table data-toggle="table" data-url="./status"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+					<table>
 						<thead>
 						<tr>
-							<th data-field="job_id" data-sortable="true">Job ID</th>
-							<th data-field="start" data-sortable="true">Submit Data</th>
-							<th data-field="submit_date" data-sortable="true">Status</th>
-							<th data-field="end"  data-sortable="true">Result</th>
+							<th data-sortable="true">Job ID</th>
+							<th data-sortable="true">Submit Data</th>
+							<th data-sortable="true">Status</th>
+							<th data-sortable="true">Result</th>
 						</tr>
+						<?php
+						while($row = mysqli_fetch_assoc($result)){
+							echo "<tr>";
+							echo "<td>" . $row['jobid'] . "</td>";
+							echo "<td>" . $row['time'] . "</td>";
+							echo "<td>" . $row['email'] . "</td>";
+							echo "<td>" . $row['jobid'] . "</td>";
+							echo "</tr>";
+						}
+						?>
 						</thead>
 					</table>
 				</div>
