@@ -93,10 +93,8 @@
         <use xlink:href=\"#stroked-cancel\"></use></svg>Oops, Something went wrong. Seems like we have problem connecting to our database..</div>
         <meta http-equiv=\"refresh\" content=\"5;url=JobHistory.php\">
 	");
-	$user_token = array();
 	$user_token = $_GET["user_token"];
 	$sql = "SELECT * FROM `putella_jobs` WHERE `email`='$user_token'";
-	$result = array();
 	$result = mysqli_query($connection, $sql) or
 	die ("
         <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
@@ -133,7 +131,7 @@
 							exec("cat var/$jobid.output | wc -l", $line_count);
 							if ($line_count[0] == 0){
 								echo "No result";
-								break;
+								continue;
 							} else {
 								echo $line_count[0] . " result(s)";
 							}
