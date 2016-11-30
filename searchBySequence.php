@@ -48,7 +48,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>C4LAB</span>VARCLUST</a>
+            <a class="navbar-brand" href="#"><span>PUTELLA</span>DATABASE</a>
         </div>
 
     </div><!-- /.container-fluid -->
@@ -61,26 +61,10 @@
         </div>
     </form>
     <ul class="nav menu">
-        <li><a href="index.html">
-                <svg class="glyph stroked home">
-                    <use xlink:href="#stroked-home"/>
-                </svg>
-                Introduction</a></li>
-        <li><a href="SubmitJob.html">
-                <svg class="glyph stroked dashboard dial">
-                    <use xlink:href="#stroked-dashboard-dial"/>
-                </svg>
-                Submit Job </a></li>
-        <li><a href="JobStatus.php">
-                <svg class="glyph stroked clipboard with paper">
-                    <use xlink:href="#stroked-clipboard-with-paper"/>
-                </svg>
-                Job Status</a></li>
-        <li><a href="Results.php">
-                <svg class="glyph stroked line-graph">
-                    <use xlink:href="#stroked-line-graph"></use>
-                </svg>
-                Results</a></li>
+        <li><a href="index.html"><svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg> Introduction </a></li>
+        <li class="active"><a href="SubmitJob.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Submit Jobs</a></li>
+        <li><a href="JobHistory.php"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Job History</a></li>
+        <li><a href="Results.php"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Results</a></li>
     </ul>
 </div><!--/.sidebar-->
 

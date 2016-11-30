@@ -2,141 +2,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PutellaDatabase - Job Status</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PutellaDatabase - Job History</title>
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/datepicker3.css" rel="stylesheet">
-<link href="css/bootstrap-table.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-    
-<!--Icons-->
-<script src="js/lumino.glyphs.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/datepicker3.css" rel="stylesheet">
+	<link href="css/bootstrap-table.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
 
-<!--[if lt IE 9]>
-<script src="js/html5shiv.js"></script>
-<script src="js/respond.min.js"></script>
-<![endif]-->
+	<!--Icons-->
+	<script src="js/lumino.glyphs.js"></script>
+
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
 
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#"><span>PUTELLA</span>DATABASE</a>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><span>PUTELLA</span>DATABASE</a>
 
-			</div>
-							
-		</div><!-- /.container-fluid -->
-	</nav>
-		
-	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-		<form role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
-			</div>
-		</form>
-		<ul class="nav menu">
-            <li><a href="index.html"><svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg> Introduction </a></li>
-            
-            <li><a href="SubmitJob.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Submit Jobs</a></li>
-            <li class="active"><a href="JobStatus.html"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Jobs Status</a></li>
-            <li><a href="Results.php"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Results</a></li>
+		</div>
 
-		</ul>
+	</div><!-- /.container-fluid -->
+</nav>
 
-	</div><!--/.sidebar-->
-		
-	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+	<form role="search">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Search">
+		</div>
+	</form>
+	<ul class="nav menu">
+		<li><a href="index.html"><svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg> Introduction </a></li>
+		<li><a href="SubmitJob.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Submit Jobs</a></li>
+		<li class="active"><a href="JobHistory.php"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Job History</a></li>
+		<li><a href="Results.php"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Results</a></li>
 
-		<div class="row">
-			<div class="col-lg-12">
-<!--				<h1 class="page-header">Forms</h1>-->
-                <font color="#f5f5f5">.</font>
-			</div>
-		</div><!--/.row-->
-				
-		
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Get your Job status</div>
-					<div class="panel-body">
-						<div class="col-md-6">
-							<form role="form">
-							
-								<div class="form-group">
-									<label>Your E-mail address:</label>
-									<input class="form-control" placeholder="type-in your email address here....">
-								</div>
+	</ul>
 
-								
-								<button type="submit" class="btn btn-primary">Submit</button>
-								<button type="reset" class="btn btn-default">Reset</button>
-							
-						    </form>
-                         </div>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+
+	<div class="row">
+		<div class="col-lg-12">
+			<!--				<h1 class="page-header">Forms</h1>-->
+			<font color="#f5f5f5">.</font>
+		</div>
+	</div><!--/.row-->
+
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Get your Job status</div>
+				<div class="panel-body">
+					<div class="col-md-6">
+						<form role="form">
+
+							<div class="form-group">
+								<label>Your E-mail address:</label>
+								<input class="form-control" placeholder="type-in your email address here....">
+							</div>
+
+
+							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="reset" class="btn btn-default">Reset</button>
+
+						</form>
 					</div>
 				</div>
-			</div><!-- /.col-->
-		</div><!-- /.row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Job Status</div>
-                    <div class="panel-body">
-                        <table data-toggle="table" data-url="./status"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
-                            <thead>
-                            <tr>
-                                <th data-field="job_id" data-sortable="true">Job ID</th>
-                                <th data-field="start" data-sortable="true">Chromosome</th>
-                                <th data-field="end"  data-sortable="true">Start</th>
-                                <th data-field="chromosome" data-sortable="true">End</th>
-                                <th data-field="user_token" data-sortable="true" >E-mail</th>
-                                <th data-field="status" data-sortable="true" >Status</th>
-                                <th data-field="submit_date" data-sortable="true">Submit Date</th>
-                                <th data-field="update_date"  data-sortable="true">Update Date</th>
-                                <th data-field="note" data-sortable="no">note</th>
-                            </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div><!--/.row-->
-	</div><!--/.main-->
+			</div>
+		</div><!-- /.col-->
+	</div><!-- /.row -->
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Job Status</div>
+				<div class="panel-body">
+					<table data-toggle="table" data-url="./status"  data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<thead>
+						<tr>
+							<th data-field="job_id" data-sortable="true">Job ID</th>
+							<th data-field="start" data-sortable="true">Chromosome</th>
+							<th data-field="end"  data-sortable="true">Start</th>
+							<th data-field="chromosome" data-sortable="true">End</th>
+							<th data-field="user_token" data-sortable="true" >E-mail</th>
+							<th data-field="status" data-sortable="true" >Status</th>
+							<th data-field="submit_date" data-sortable="true">Submit Date</th>
+							<th data-field="update_date"  data-sortable="true">Update Date</th>
+							<th data-field="note" data-sortable="no">note</th>
+						</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div><!--/.row-->
+</div><!--/.main-->
 
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/bootstrap-table.js"></script>
-	<script>
-		!function ($) {
-			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
-				$(this).find('em:first').toggleClass("glyphicon-minus");	  
-			}); 
-			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-		}(window.jQuery);
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/chart-data.js"></script>
+<script src="js/easypiechart.js"></script>
+<script src="js/easypiechart-data.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/bootstrap-table.js"></script>
+<script>
+	!function ($) {
+		$(document).on("click","ul.nav li.parent > a > span.icon", function(){
+			$(this).find('em:first').toggleClass("glyphicon-minus");
+		});
+		$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+	}(window.jQuery);
 
-		$(window).on('resize', function () {
-		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-		})
-		$(window).on('resize', function () {
-		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-		})
-	</script>	
+	$(window).on('resize', function () {
+		if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+	})
+	$(window).on('resize', function () {
+		if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+	})
+</script>
 </body>
 
 </html>
