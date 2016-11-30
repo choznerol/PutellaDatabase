@@ -90,7 +90,7 @@
 	$connection = mysqli_connect("localhost", "callsobing", "wannatobetop", "varclust") or
 	die("
 		<div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
-        <use xlink:href=\"#stroked-cancel\"></use></svg>Oops, Something went wrong. Seems like we have problem connecting to our database..</div><img src=\"img/sorry.jpg\">
+        <use xlink:href=\"#stroked-cancel\"></use></svg>Oops, Something went wrong. Seems like we have problem connecting to our database..</div>
         <meta http-equiv=\"refresh\" content=\"5;url=JobHistory.php\">
 	");
 
@@ -102,6 +102,12 @@
         <use xlink:href=\"#stroked-cancel\"></use></svg>No job submitted for user @</div><img src=\"img/sorry.jpg\">
         <meta http-equiv=\"refresh\" content=\"5;url=JobHistory.php\">
     ");
+
+	while($row = mysqli_fetch_assoc($result)){
+		echo "Hello World!";
+		echo $row;
+		echo $row['jobid'];
+	}
 
 	?>
 
