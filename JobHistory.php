@@ -93,9 +93,10 @@
         <use xlink:href=\"#stroked-cancel\"></use></svg>Oops, Something went wrong. Seems like we have problem connecting to our database..</div>
         <meta http-equiv=\"refresh\" content=\"5;url=JobHistory.php\">
 	");
-
+	$user_token = array();
 	$user_token = $_GET["user_token"];
 	$sql = "SELECT * FROM `putella_jobs` WHERE `email`='$user_token'";
+	$result = array();
 	$result = mysqli_query($connection, $sql) or
 	die ("
         <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
@@ -103,11 +104,6 @@
         <meta http-equiv=\"refresh\" content=\"5;url=JobHistory.php\">
     ");
 
-	while($row = mysqli_fetch_assoc($result)){
-		echo "Hello World!";
-		echo $row;
-		echo $row['jobid'];
-	}
 
 	?>
 
@@ -117,7 +113,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Job History</div>
 				<div class="panel-body">
-					<table>
+<table data-toggle="table" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						<thead>
 						<tr>
 							<th data-sortable="true">Job ID</th>
@@ -125,17 +121,30 @@
 							<th data-sortable="true">Status</th>
 							<th data-sortable="true">Result</th>
 						</tr>
+</thead>
 						<?php
 						while($row = mysqli_fetch_assoc($result)){
 							echo "<tr>";
 							echo "<td>" . $row['jobid'] . "</td>";
 							echo "<td>" . $row['time'] . "</td>";
-							echo "<td>" . $row['email'] . "</td>";
-							echo "<td>" . $row['jobid'] . "</td>";
+							echo "<td>";
+							$line_count = Array();	
+							$jobid=$row['jobid'];
+							exec("cat var/$jobid.output | wc -l", $line_count);
+							if ($line_count[0] == 0){
+								echo "No result";
+								break;
+							} else {
+								echo $line_count[0] . " result(s)";
+							}
+							echo "</td>";
+							echo "<td>". 
+								"<a href=http://140.112.94.72/~lc1024/PutellaDatabase/Results.php?jobid=".$row['jobid'].">view</a>"
+							. "</td>";
 							echo "</tr>";
 						}
 						?>
-						</thead>
+						
 					</table>
 				</div>
 			</div>
