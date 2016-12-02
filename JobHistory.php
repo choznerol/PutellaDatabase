@@ -137,7 +137,7 @@
 							}
 							echo "</td>";
 							echo "<td>". 
-								"<a href=http://140.112.94.72/~lc1024/PutellaDatabase/Results.php?jobid=".$row['jobid'].">view</a>"
+								"<a href=http://140.112.94.72/~callsobing/PutellaDatabase/Results.php?jobid=".$row['jobid'].">view</a>"
 							. "</td>";
 							echo "</tr>";
 						}
