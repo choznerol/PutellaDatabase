@@ -36,6 +36,13 @@ tr:nth-child(even) {
 </style>
 
 <body>
+<?php
+//3. php obtain value
+$email = $_POST["email"];
+$text = $_POST["text"];
+$query = $_POST["sequence"];
+$job_id = "Plutella_" . md5(uniqid(rand()));
+?>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -59,26 +66,10 @@ tr:nth-child(even) {
         </div>
     </form>
     <ul class="nav menu">
-        <li><a href="index.html">
-                <svg class="glyph stroked home">
-                    <use xlink:href="#stroked-home"/>
-                </svg>
-                Introduction</a></li>
-        <li><a href="submit.html">
-                <svg class="glyph stroked dashboard dial">
-                    <use xlink:href="#stroked-dashboard-dial"/>
-                </svg>
-                Submit Job </a></li>
-        <li><a href="job_status.php">
-                <svg class="glyph stroked clipboard with paper">
-                    <use xlink:href="#stroked-clipboard-with-paper"/>
-                </svg>
-                Job Status</a></li>
-        <li><a href="result.php">
-                <svg class="glyph stroked line-graph">
-                    <use xlink:href="#stroked-line-graph"></use>
-                </svg>
-                Results</a></li>
+        <li><a href="index.html"><svg class="glyph stroked home"><use xlink:href="#stroked-home"/></svg> Introduction </a></li>
+        <li class="active"><a href="SubmitJob.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Submit Jobs</a></li>
+        <li><a href="JobHistory.php"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Job History</a></li>
+        <li><a href="Results.php"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Results</a></li>
     </ul>
 </div><!--/.sidebar-->
 
@@ -86,7 +77,7 @@ tr:nth-child(even) {
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Job Submission Status</h1>
+            <h1 class="page-header">Keyword search result for <b><?php echo $query ?></b></h1>
         </div>
     </div><!--/.row-->
 
@@ -96,35 +87,18 @@ tr:nth-child(even) {
 
             <?php
             //1.   Connect to server and select database.
-            $link = mysqli_connect("localhost", "callsobing", "wannatobetop", "varclust") or
+            $link = mysql_connect("localhost", "callsobing", "wannatobetop") or
             die("
                 <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
                 <use xlink:href=\"#stroked-cancel\"></use></svg>Oooops, Something went wrong. Seems like we are facing some technical issues during connecting to database....</div><img src=\"img/sorry.jpg\">
                 <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
             ");
 
-            //2.     Check if user already has more than 2 jobs in queue.
-            $token = $_POST["email"];
-
-            //select from putella db where all column match that text
-            $sql = "SELECT * FROM `jobs` WHERE `user_token`='$token'";
-            $result = mysqli_query($link, $sql) or
-            die ("
-                <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
-                <use xlink:href=\"#stroked-cancel\"></use></svg>Oooops, Something went wrong. Seems like we are facing some technical issues during selecting new records in the database....</div><img src=\"img/sorry.jpg\">
-                <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
-            ");
-
-            //3. php obtain value
-            $email = $_POST["email"];
-            $text = $_POST["text"];
-            $job_id = "putella_" . md5(uniqid(rand()));
-            $path_prefix = "/var/www/html/putella/record/";
-
             //4. one by one search for query
             //search entire DB table SELECT * From `DB_table` WHERE * like '%$text%'
-            $sql_text="select * from 'putella_DB' WHERE * like '%$text%'";
-            $res_text=mysqli_query($link,$sql_text) or die("
+            mysql_select_db("SNP") or die("database connect fail!");
+            $sql_text="SELECT * FROM `PutellaAnnotation` WHERE `Transcripts_ID` like '%{$query}%' OR `China_id` like '%{$query}%' OR `China_annotation` like '%{$query}%'  OR `Drosophila_id` like '%{$query}%' OR `Drosophila_annotation` like '%{$query}%' OR `Insecta_id` like '%{$query}%' OR `Insecta_annotaion` like '%{$query}%' OR `Silkworm_id` like '%{$query}%' OR `Silkworm_annotation` like '%{$query}%' OR `NR_ID` like '%{$query}%' OR `NR_annotation` like '%{$query}%' OR `EC_id` like '%{$query}%' OR `EC` like '%{$query}%'";
+            $res_text = mysql_query($sql_text) or die("
                 <div class=\"alert bg-danger\" role=\"alert\"><svg class=\"glyph stroked cancel\">
                 <use xlink:href=\"#stroked-cancel\"></use></svg>Oooops, Something went wrong. Seems like we are facing some technical issues during selecting new records in the database....</div><img src=\"img/sorry.jpg\">
                 <meta http-equiv=\"refresh\" content=\"5;url=submit.html\">
@@ -132,56 +106,47 @@ tr:nth-child(even) {
                 
             //$res_text=$con->query($sql)
             // while($row=$res->fetch_assoc()){ echo 'First_name: '.$row["First_Name"]; } 
-    
-
-            while($row_text=mysql_fetch_assoc($res_text)){
-                
-            exec("echo \"$row_text\" ,$out_text");
-                
-            }
-            file_put_contents('searchbytext.txt', $out_text,FILE_APPEND); //add path and job id 
             ?>
-
-
-            <div class="alert bg-success" role="alert">
-                <svg class="glyph stroked checkmark">
-                    <use xlink:href="#stroked-checkmark"></use>
-                </svg>
-                Your job has been submitted! <a href="#" class="pull-right"><span
-                        class="glyphicon glyphicon-remove"></span></a>
-            </div>
-            <meta http-equiv="refresh" content="5;url=job_status.php">
             <div class="col-lg-12">
-                <label>Job Submission Summary</label>
-                <table>
-                  <tr>
-                    <td>E-mail</td>
-                    <td><?php echo $email ?></td>
-                  </tr>
-                  <tr>
-                    <td>Job ID</td>
-                    <td><?php echo $job_id ?></td>
-                  </tr>
-                  <tr>
-                    <td>Chromosome</td>
-                    <td>chr<?php echo $chromosome ?></td>
-                  </tr>
-                  <tr>
-                    <td>Start</td>
-                    <td><?php echo $start ?></td>
-                  </tr>
-                  <tr>
-                    <td>End</td>
-                    <td><?php echo $end ?></td>
-                  </tr>
-                  <tr>
-                    <td>Clustering Method</td>
-                    <td><?php echo $clustering_m ?></td>
-                  </tr>
-                  <tr>
-                    <td>Notes</td>
-                    <td><?php echo $notes ?></td>
-                  </tr>
+                    <table>
+                        <tr>
+                            <th>Transcripts_ID</th>
+                            <th>China_id</th>
+                            <th>China_annotation</th>
+                            <th>Drosophila_id</th>
+                            <th>Drosophila_annotation</th>
+                            <th>Insecta_id</th>
+                            <th>Insecta_annotaion</th>
+                            <th>Silkworm_id</th>
+                            <th>Silkworm_annotation</th>
+                            <th>NR_ID</th>
+                            <th>NR_annotation</th>
+                            <th>EC_id</th>
+                            <th>EC</th>
+                            <th>Up/Down Regulate</th>
+                        </tr>
+            <?php
+                while ($row = mysql_fetch_row($res_text)){
+            ?>
+                        <tr>
+                            <td><a href="contig.php?contig=<?php echo $row[0] ?>"><?php echo $row[0] ?></a></td>
+                            <td><?php echo $row[1] ?></td>
+                            <td><?php echo $row[2] ?></td>
+                            <td><?php echo $row[3] ?></td>
+                            <td><?php echo $row[4] ?></td>
+                            <td><?php echo $row[5] ?></td>
+                            <td><?php echo $row[6] ?></td>
+                            <td><?php echo $row[7] ?></td>
+                            <td><?php echo $row[8] ?></td>
+                            <td><?php echo $row[9] ?></td>
+                            <td><?php echo $row[10] ?></td>
+                            <td><?php echo $row[11] ?></td>
+                            <td><?php echo $row[12] ?></td>
+                            <td><?php echo $row[13] ?></td>
+                        </tr>
+            <?php
+            }
+            ?>
                 </table>
             </div>
         </div>

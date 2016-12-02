@@ -49,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>PUTELLA</span>DATABASE</a>
+            <a class="navbar-brand" href="#"><span>Plutella</span>DATABASE</a>
 
         </div>
 
@@ -134,7 +134,11 @@
                         var options = {
                             title: 'Expression profile of <?php echo $contig ?> across 14 conditions',
                             curveType: 'function',
-                            legend: { position: 'bottom' }
+                            legend: { position: 'bottom' },
+                            hAxis: {
+                                showTextEvery: 1,
+                                slantedTextAngle: 45
+                             }
                         };
 
                         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
@@ -154,7 +158,7 @@
             mysql_connect("localhost", "callsobing", "wannatobetop") or die("sql connect fail!");
             mysql_select_db("SNP") or die("database connect fail!");
             $sql = "SELECT * FROM `PutellaAnnotation` WHERE `Transcripts_ID`='$contig'";
-            $result = mysql_query($sql) or die("insert fail");
+            $result = mysql_query($sql) or die("fetch fail");
             $row = mysql_fetch_row($result);
             ?>
             <table>

@@ -46,7 +46,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>PUTELLA</span>DATABASE</a>
+            <a class="navbar-brand" href="#"><span>Plutella</span>DATABASE</a>
 
         </div>
 
@@ -139,7 +139,12 @@
                             $cells = explode("\t",$lines[$i]); // use the cell/row delimiter what u need!
                             for($k=0;$k<count($cells);$k++)
                             {
-                                echo "<td>".$cells[$k]."</td>";
+                                if($k==1){
+
+                                    echo "<td><a href=\"contig.php?contig=$cells[$k]\">" . $cells[$k] . "</a></td>";
+                                } else {
+                                    echo "<td>" . $cells[$k] . "</td>";
+                                }
                             }
                             echo "</tr>";
                         }

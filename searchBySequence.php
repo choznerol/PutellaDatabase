@@ -48,7 +48,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>PUTELLA</span>DATABASE</a>
+            <a class="navbar-brand" href="#"><span>Plutella</span>DATABASE</a>
         </div>
 
     </div><!-- /.container-fluid -->
@@ -85,7 +85,7 @@
             $email = $_POST["email"];
             $method = "sequence" ;
             $sequence = $_POST["sequence"];
-            $job_id = "putella_seq_" . md5(uniqid(rand()));
+            $job_id = "Plutella_seq_" . md5(uniqid(rand()));
             $path_prefix = "var/";
 
             mysql_connect("localhost", "callsobing", "wannatobetop") or die("sql connect fail!");

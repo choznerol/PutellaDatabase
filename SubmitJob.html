@@ -32,7 +32,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><span>PUTELLA</span>DATABASE</a>
+			<a class="navbar-brand" href="#"><span>Plutella</span>DATABASE</a>
 
 		</div>
 
@@ -81,7 +81,7 @@
 							<div class="form-group">
 								<label>Species</label>
 								<select name="species" class="form-control">
-									<option>Putella</option>
+									<option>Plutella</option>
 									<option>Drosophila</option>
 									<option>Homo Sapiens</option>
 									<option>Mouse</option>
@@ -143,32 +143,13 @@
 			return;
 
 		var URLs;
+
 		if(searchType.value==1)
-			URLs="receiveText.php";
+			URLs="SearchByText.php";
 		else
 			URLs="searchBySequence.php";
 
 		$('<form action="'+URLs+'" method="POST"><input type="hidden" name="sequence" value="'+query.value+'"><input type="hidden" name="email" value="'+mail.value+'"></form>').appendTo('body').submit();
-
-//            $.post(URLs, {query: query.value} )
-//                .done(function(data) {
-//                    swal("Job received", " ", "success");
-//                });
-
-//            $.redirectPost(URLs, {query: query.value});
-//
-//            // jquery extend function
-//            $.extend({
-//                redirectPost: function(location, args) {
-//                    var form = '';
-//                    $.each( args, function( key, value ) {
-//                        form += '<input type="hidden" query="'+value'">';
-//                    });
-//                    $('<form action="'+location+'" method="POST">'+form+'</form>').appendTo('body').submit();
-//                }
-//            });
-//            
-
 	}
 
 
