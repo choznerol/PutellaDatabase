@@ -113,33 +113,53 @@
 
                     function drawBasic() {
                         var data = google.visualization.arrayToDataTable([
-                            ['Condition', 'Expression Value'],
-                            ['12SH-1_FCC22HDACXX_L4',  <?php echo $FCC22HDACXX_L4 ?>],
-                            ['12SH-2_FCC21UVACXX_L1',  <?php echo $FCC21UVACXX_L1 ?>],
-                            ['12SHA1',  <?php echo $SHA1 ?>],
-                            ['12SHA2',  <?php echo $SHA2 ?>],
-                            ['12SHB1',  <?php echo $SHB1 ?>],
-                            ['12SHB2',  <?php echo $SHB2 ?>],
-                            ['12SHC1',  <?php echo $SHC1 ?>],
-                            ['12SHC2',  <?php echo $SHC2 ?>],
-                            ['12SHD1',  <?php echo $SHD1 ?>],
-                            ['12SHD2',  <?php echo $SHD2 ?>],
-                            ['944_SUS14G',  <?php echo $SUS14G ?>],
-                            ['944M_RESIST2G',  <?php echo $M_RESIST2G ?>],
-                            ['SH_FCC22HDACXX_L4',  <?php echo $SH_FCC22HDACXX_L4 ?>],
-                            ['SH1_SUS2G',  <?php echo $SH1_SUS2G ?>],
-                            ['SHM_RESIS2G',  <?php echo $SHM_RESIS2G ?>]
+                            ['Condition', 'Expression Value',{type: 'string', role: 'annotation'}, { role: 'style' }],
+                            ['944_SUS14G',  <?php echo $SUS14G ?>,  <?php echo $SUS14G ?>, '#EABA6B'],
+                            ['944M_RESIST2G',  <?php echo $M_RESIST2G ?>,  <?php echo $M_RESIST2G ?>,'#00ABE7'],
+                            ['SH_FCC22HDACXX_L4',  <?php echo $SH_FCC22HDACXX_L4 ?>,  <?php echo $SH_FCC22HDACXX_L4 ?>,'#EABA6B'],
+                            ['SH1_SUS2G',  <?php echo $SH1_SUS2G ?>,  <?php echo $SH1_SUS2G ?>,'#EABA6B'],
+                            ['SHM_RESIS2G',  <?php echo $SHM_RESIS2G ?>,  <?php echo $SHM_RESIS2G ?>,'#00ABE7'],
+                            ['12SH-1_FCC22HDACXX_L4',  <?php echo $FCC22HDACXX_L4 ?>,  <?php echo $FCC22HDACXX_L4 ?> ,'#00ABE7'],
+                            ['12SH-2_FCC21UVACXX_L1',  <?php echo $FCC21UVACXX_L1 ?>,  <?php echo $FCC21UVACXX_L1 ?>,'#00ABE7'],
+                            ['12SHA1',  <?php echo $SHA1 ?>,  <?php echo $SHA1 ?>,'#00ABE7'],
+                            ['12SHA2',  <?php echo $SHA2 ?>,  <?php echo $SHA2 ?>,'#00ABE7'],
+                            ['12SHB1',  <?php echo $SHB1 ?>,  <?php echo $SHB1 ?>,'#00ABE7'],
+                            ['12SHB2',  <?php echo $SHB2 ?>,  <?php echo $SHB2 ?>,'#00ABE7'],
+                            ['12SHC1',  <?php echo $SHC1 ?>,  <?php echo $SHC1 ?>,'#00ABE7'],
+                            ['12SHC2',  <?php echo $SHC2 ?>,  <?php echo $SHC2 ?>,'#00ABE7'],
+                            ['12SHD1',  <?php echo $SHD1 ?>,  <?php echo $SHD1 ?>,'#00ABE7'],
+                            ['12SHD2',  <?php echo $SHD2 ?>,  <?php echo $SHD2 ?>,'#00ABE7']
                         ]);
 
                         var options = {
                             title: 'Expression profile of <?php echo $contig ?> across 14 conditions',
                             chartArea: {width: '50%'},
+                            legend: { position: "none" },
+                            height: 400,
                             hAxis: {
-                                title: 'Expression Value',
+                                title: 'Expression Value (*susceptible strains are highlighted in yellow)',
                                 minValue: 0
                              },
                             vAxis: {
                                 title: 'Conditions'
+                            },
+                            annotations: {
+                                alwaysOutside: true,
+                                textStyle: {
+                                    fontSize: 12,
+                                    auraColor: 'none',
+                                    color: '#555'
+                                },
+                                boxStyle: {
+                                    stroke: '#ccc',
+                                    strokeWidth: 1,
+                                    gradient: {
+                                        color1: '#f3e5f5',
+                                        color2: '#f3e5f5',
+                                        x1: '0%', y1: '0%',
+                                        x2: '100%', y2: '100%'
+                                    }
+                                }
                             }
                         };
 
