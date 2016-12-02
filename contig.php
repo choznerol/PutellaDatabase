@@ -83,7 +83,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <div id="curve_chart">
+            <div id="chart_div">
                 <?php
                 $contig = $_GET["contig"];
                 mysql_connect("localhost", "callsobing", "wannatobetop") or die("sql connect fail!");
@@ -108,10 +108,10 @@
                 $SHM_RESIS2G = $row[15];
                 ?>
                 <script type='text/javascript'>
-                    google.charts.load('current', {packages: ['corechart', 'line']});
-                    google.charts.setOnLoadCallback(drawChart);
+                    google.charts.load('current', {packages: ['corechart', 'bar']});
+                    google.charts.setOnLoadCallback(drawBasic);
 
-                    function drawChart() {
+                    function drawBasic() {
                         var data = google.visualization.arrayToDataTable([
                             ['Condition', 'Expression Value'],
                             ['12SH-1_FCC22HDACXX_L4',  <?php echo $FCC22HDACXX_L4 ?>],
@@ -133,15 +133,17 @@
 
                         var options = {
                             title: 'Expression profile of <?php echo $contig ?> across 14 conditions',
-                            curveType: 'function',
-                            legend: { position: 'bottom' },
+                            chartArea: {width: '50%'},
                             hAxis: {
-                                showTextEvery: 1,
-                                slantedTextAngle: 45
-                             }
+                                title: 'Expression Value',
+                                minValue: 0
+                             },
+                            vAxis: {
+                                title: 'Conditions'
+                            }
                         };
 
-                        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+                        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
 
                         chart.draw(data, options);
                     }
