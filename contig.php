@@ -133,7 +133,7 @@
 
                         var options = {
                             title: 'Expression profile of <?php echo $contig ?> across 14 conditions',
-                            chartArea: {width: '50%'},
+                            chartArea: {left:'25%',width:'65%'},
                             legend: { position: "none" },
                             height: 400,
                             hAxis: {
