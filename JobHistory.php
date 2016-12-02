@@ -94,6 +94,9 @@
         <meta http-equiv=\"refresh\" content=\"5;url=JobHistory.php\">
 	");
 	$user_token = $_GET["user_token"];
+	if ($user_token==' '||$user_token==''){
+		$user_token=='empty';
+	}
 	$sql = "SELECT * FROM `putella_jobs` WHERE `email`='$user_token'";
 	$result = mysqli_query($connection, $sql) or
 	die ("
