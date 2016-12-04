@@ -53,7 +53,7 @@ $job_id = "Plutella_" . md5(uniqid(rand()));
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span>C4LAB</span>VARCLUST</a>
+            <a class="navbar-brand" href="#"><span>plutella</span>database</a>
         </div>
 
     </div><!-- /.container-fluid -->
