@@ -5,11 +5,13 @@ Version 1.0
 
 
 /*Global Styles*/
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 
 body {
 	background: #f1f4f7;
 	padding-top: 50px;
 	color: #5f6468;
+    font-family: 'cwTeXYen', sans-serif;
 }
 
 p {
@@ -570,7 +572,7 @@ a.bg-danger:hover {
 .sidebar ul.nav .active > a:focus, .sidebar ul.nav li.parent a.active:focus {
 	color: #fff;
 	background-color: #30a5ff;
-}*/
+}
 
 .sidebar ul.nav ul,
 .sidebar ul.nav ul li {
@@ -927,6 +929,10 @@ h1.page-header {
 	border-color: #ddd;
 	height: 65px;
 	overflow: scroll;
+}
+
+tc {
+    font-family: 'cwTeXYen', sans-serif;
 }
 
 
