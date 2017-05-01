@@ -106,68 +106,87 @@
                 $SH_FCC22HDACXX_L4 = $row[13];
                 $SH1_SUS2G = $row[14];
                 $SHM_RESIS2G = $row[15];
-                ?>
-                <script type='text/javascript'>
-                    google.charts.load('current', {packages: ['corechart', 'bar']});
-                    google.charts.setOnLoadCallback(drawBasic);
+                if(empty($_GET["users"])){
+                    echo "You need to Specify your Email address to get the Expression Information of the Contig:";
+                } else if($_GET["users"]) {
+                    $user_id = $_GET["users"];
+                    mysql_connect("localhost", "callsobing", "wannatobetop") or die("sql connect fail!");
+                    mysql_select_db("SNP") or die("database connect fail!");
+                    $sql = "SELECT * FROM `users` WHERE `id`='$user_id'";
+                    $result = mysql_query($sql) or die("insert fail");
+                    $row = mysql_fetch_row($result);
+                    if($row) {
+                        ?>
+                        <script type='text/javascript'>
+                            google.charts.load('current', {packages: ['corechart', 'bar']});
+                            google.charts.setOnLoadCallback(drawBasic);
 
-                    function drawBasic() {
-                        var data = google.visualization.arrayToDataTable([
-                            ['Condition', 'Expression Value',{type: 'string', role: 'annotation'}, { role: 'style' }],
-                            ['944_SUS14G',  <?php echo $SUS14G ?>,  <?php echo $SUS14G ?>, '#EABA6B'],
-                            ['944M_RESIST2G',  <?php echo $M_RESIST2G ?>,  <?php echo $M_RESIST2G ?>,'#00ABE7'],
-                            ['SH_FCC22HDACXX_L4',  <?php echo $SH_FCC22HDACXX_L4 ?>,  <?php echo $SH_FCC22HDACXX_L4 ?>,'#EABA6B'],
-                            ['SH1_SUS2G',  <?php echo $SH1_SUS2G ?>,  <?php echo $SH1_SUS2G ?>,'#EABA6B'],
-                            ['SHM_RESIS2G',  <?php echo $SHM_RESIS2G ?>,  <?php echo $SHM_RESIS2G ?>,'#00ABE7'],
-                            ['12SH-1_FCC22HDACXX_L4',  <?php echo $FCC22HDACXX_L4 ?>,  <?php echo $FCC22HDACXX_L4 ?> ,'#00ABE7'],
-                            ['12SH-2_FCC21UVACXX_L1',  <?php echo $FCC21UVACXX_L1 ?>,  <?php echo $FCC21UVACXX_L1 ?>,'#00ABE7'],
-                            ['12SHA1',  <?php echo $SHA1 ?>,  <?php echo $SHA1 ?>,'#00ABE7'],
-                            ['12SHA2',  <?php echo $SHA2 ?>,  <?php echo $SHA2 ?>,'#00ABE7'],
-                            ['12SHB1',  <?php echo $SHB1 ?>,  <?php echo $SHB1 ?>,'#00ABE7'],
-                            ['12SHB2',  <?php echo $SHB2 ?>,  <?php echo $SHB2 ?>,'#00ABE7'],
-                            ['12SHC1',  <?php echo $SHC1 ?>,  <?php echo $SHC1 ?>,'#00ABE7'],
-                            ['12SHC2',  <?php echo $SHC2 ?>,  <?php echo $SHC2 ?>,'#00ABE7'],
-                            ['12SHD1',  <?php echo $SHD1 ?>,  <?php echo $SHD1 ?>,'#00ABE7'],
-                            ['12SHD2',  <?php echo $SHD2 ?>,  <?php echo $SHD2 ?>,'#00ABE7']
-                        ]);
+                            function drawBasic() {
+                                var data = google.visualization.arrayToDataTable([
+                                    ['Condition', 'Expression Value', {
+                                        type: 'string',
+                                        role: 'annotation'
+                                    }, {role: 'style'}],
+                                    ['944_SUS14G',  <?php echo $SUS14G ?>,  <?php echo $SUS14G ?>, '#EABA6B'],
+                                    ['944M_RESIST2G',  <?php echo $M_RESIST2G ?>,  <?php echo $M_RESIST2G ?>, '#00ABE7'],
+                                    ['SH_FCC22HDACXX_L4',  <?php echo $SH_FCC22HDACXX_L4 ?>,  <?php echo $SH_FCC22HDACXX_L4 ?>, '#EABA6B'],
+                                    ['SH1_SUS2G',  <?php echo $SH1_SUS2G ?>,  <?php echo $SH1_SUS2G ?>, '#EABA6B'],
+                                    ['SHM_RESIS2G',  <?php echo $SHM_RESIS2G ?>,  <?php echo $SHM_RESIS2G ?>, '#00ABE7'],
+                                    ['12SH-1_FCC22HDACXX_L4',  <?php echo $FCC22HDACXX_L4 ?>,  <?php echo $FCC22HDACXX_L4 ?> , '#00ABE7'],
+                                    ['12SH-2_FCC21UVACXX_L1',  <?php echo $FCC21UVACXX_L1 ?>,  <?php echo $FCC21UVACXX_L1 ?>, '#00ABE7'],
+                                    ['12SHA1',  <?php echo $SHA1 ?>,  <?php echo $SHA1 ?>, '#00ABE7'],
+                                    ['12SHA2',  <?php echo $SHA2 ?>,  <?php echo $SHA2 ?>, '#00ABE7'],
+                                    ['12SHB1',  <?php echo $SHB1 ?>,  <?php echo $SHB1 ?>, '#00ABE7'],
+                                    ['12SHB2',  <?php echo $SHB2 ?>,  <?php echo $SHB2 ?>, '#00ABE7'],
+                                    ['12SHC1',  <?php echo $SHC1 ?>,  <?php echo $SHC1 ?>, '#00ABE7'],
+                                    ['12SHC2',  <?php echo $SHC2 ?>,  <?php echo $SHC2 ?>, '#00ABE7'],
+                                    ['12SHD1',  <?php echo $SHD1 ?>,  <?php echo $SHD1 ?>, '#00ABE7'],
+                                    ['12SHD2',  <?php echo $SHD2 ?>,  <?php echo $SHD2 ?>, '#00ABE7']
+                                ]);
 
-                        var options = {
-                            title: 'Expression profile of <?php echo $contig ?> across 14 conditions',
-                            chartArea: {left:'25%',width:'65%'},
-                            legend: { position: "none" },
-                            height: 400,
-                            hAxis: {
-                                title: 'Expression Value (*susceptible strains are highlighted in yellow)',
-                                minValue: 0
-                             },
-                            vAxis: {
-                                title: 'Conditions'
-                            },
-                            annotations: {
-                                alwaysOutside: true,
-                                textStyle: {
-                                    fontSize: 12,
-                                    auraColor: 'none',
-                                    color: '#555'
-                                },
-                                boxStyle: {
-                                    stroke: '#ccc',
-                                    strokeWidth: 1,
-                                    gradient: {
-                                        color1: '#f3e5f5',
-                                        color2: '#f3e5f5',
-                                        x1: '0%', y1: '0%',
-                                        x2: '100%', y2: '100%'
+                                var options = {
+                                    title: 'Expression profile of <?php echo $contig ?> across 14 conditions',
+                                    chartArea: {left: '25%', width: '65%'},
+                                    legend: {position: "none"},
+                                    height: 400,
+                                    hAxis: {
+                                        title: 'Expression Value (*susceptible strains are highlighted in yellow)',
+                                        minValue: 0
+                                    },
+                                    vAxis: {
+                                        title: 'Conditions'
+                                    },
+                                    annotations: {
+                                        alwaysOutside: true,
+                                        textStyle: {
+                                            fontSize: 12,
+                                            auraColor: 'none',
+                                            color: '#555'
+                                        },
+                                        boxStyle: {
+                                            stroke: '#ccc',
+                                            strokeWidth: 1,
+                                            gradient: {
+                                                color1: '#f3e5f5',
+                                                color2: '#f3e5f5',
+                                                x1: '0%', y1: '0%',
+                                                x2: '100%', y2: '100%'
+                                            }
+                                        }
                                     }
-                                }
+                                };
+
+                                var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+                                chart.draw(data, options);
                             }
-                        };
-
-                        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-
-                        chart.draw(data, options);
+                        </script>
+                        <?php
+                    } else {
+                        echo "The specified Email address does not granted to view expression data!";
                     }
-                </script>
+                }
+                ?>
             </div>
         </div>
     </div><!--/.row-->
