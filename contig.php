@@ -108,6 +108,11 @@
                 $SHM_RESIS2G = $row[15];
                 if(!$_GET["users"]){
                     echo "You need to Specify your Email address to get the Expression Information of the Contig:";
+
+                    echo "<form action=\"contig.php\" method=\"get\">";
+                    echo "<input type=\"text\" name=\"users\" \"> <input type=\"submit\" name=\"SB\" value=\"Submit\">";
+                    echo "<input type=\"hidden\" name=\"contig\" value=\"$contig\">";
+                    echo "</form>";
                 } else if($_GET["users"]) {
                     $user_id = $_GET["users"];
                     mysql_connect("localhost", "callsobing", "wannatobetop") or die("sql connect fail!");
