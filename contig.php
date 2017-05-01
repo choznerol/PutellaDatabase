@@ -106,7 +106,7 @@
                 $SH_FCC22HDACXX_L4 = $row[13];
                 $SH1_SUS2G = $row[14];
                 $SHM_RESIS2G = $row[15];
-                if(empty($_GET["users"])){
+                if(!$_GET["users"]){
                     echo "You need to Specify your Email address to get the Expression Information of the Contig:";
                 } else if($_GET["users"]) {
                     $user_id = $_GET["users"];
